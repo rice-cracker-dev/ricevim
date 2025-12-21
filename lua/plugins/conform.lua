@@ -15,6 +15,7 @@ end
 ---@type LazySpec
 return {
 	"stevearc/conform.nvim",
+  lazy = false,
 
 	---@type conform.setupOpts
 	opts = {
@@ -28,6 +29,7 @@ return {
 
 		formatters_by_ft = {
 			lua = { "stylua" },
+			nix = { "alejandra" },
 		},
 	},
 
