@@ -1,0 +1,5 @@
+require("core.options")
+require("core.plugins")
+require("core.treesitter")
+require("core.lspconfig")
+require("core.diagnostics")
