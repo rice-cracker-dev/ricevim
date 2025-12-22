@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "direnv-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1749467049,
+        "narHash": "sha256-KqO8uDbVy4sVVZ6mHikuO+SWCzWr97ZuFRC8npOPJIE=",
+        "owner": "NotAShelf",
+        "repo": "direnv.nvim",
+        "rev": "4dfc8758a1deab45e37b7f3661e0fd3759d85788",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NotAShelf",
+        "repo": "direnv.nvim",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib"
@@ -66,9 +82,27 @@
     },
     "root": {
       "inputs": {
+        "direnv-nvim": "direnv-nvim",
         "flake-parts": "flake-parts",
         "mnw": "mnw",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "ts-error-translator": "ts-error-translator"
+      }
+    },
+    "ts-error-translator": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1764163889,
+        "narHash": "sha256-/eLbUkjFpAneMoITdknATvpDjnA5XMUjEKaDq0CG+ys=",
+        "owner": "dmmulroy",
+        "repo": "ts-error-translator.nvim",
+        "rev": "c1e6a5529009e855eb102a668549679548757a05",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dmmulroy",
+        "repo": "ts-error-translator.nvim",
+        "type": "github"
       }
     }
   },

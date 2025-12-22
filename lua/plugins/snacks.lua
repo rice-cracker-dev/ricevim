@@ -1,51 +1,57 @@
 ---@module 'lazy'
+---@module 'edgy'
 ---@module 'snacks'
 ---@type LazySpec
 return {
-	"folke/snacks.nvim",
-	priority = 1000,
-	lazy = false,
+  {
+    'nvim-neo-tree/neo-tree.nvim',
 
-	---@type snacks.Config
-	opts = {
-		picker = { enabled = true },
-	},
+    opts = function(_, opts)
+      local function on_move(data)
+        Snacks.rename.on_rename_file(data.source, data.destination)
+      end
+      local events = require('neo-tree.events')
+      opts.event_handlers = opts.event_handlers or {}
+      vim.list_extend(opts.event_handlers, {
+        { event = events.FILE_MOVED, handler = on_move },
+        { event = events.FILE_RENAMED, handler = on_move },
+      })
+    end,
+  },
+  {
+    'folke/edgy.nvim',
+    ---@param opts Edgy.Config
+    opts = function(_, opts)
+      for _, pos in ipairs({ 'top', 'bottom', 'left', 'right' }) do
+        opts[pos] = opts[pos] or {}
+        table.insert(opts[pos], {
+          ft = 'snacks_terminal',
+          size = { height = 0.3 },
+          title = '%{b:snacks_terminal.id}: %{b:term_title}',
+          filter = function(_, win)
+            return vim.w[win].snacks_win and vim.w[win].snacks_win.position == pos and vim.w[win].snacks_win.relative == 'editor' and not vim.w[win].trouble_preview
+          end,
+        })
+      end
+    end,
+  },
+  {
+    'folke/snacks.nvim',
+    lazy = false,
 
-	keys = {
-		{
-			"<leader>ff",
-			function()
-				Snacks.picker.files()
-			end,
-			desc = "Find files",
-		},
-		{
-			"<leader>fg",
-			function()
-				Snacks.picker.grep()
-			end,
-			desc = "Grep files",
-		},
-		{
-			"<leader>fb",
-			function()
-				Snacks.picker.buffers()
-			end,
-			desc = "Find buffers",
-		},
-		{
-			"<leader>fi",
-			function()
-				Snacks.picker.icons()
-			end,
-			desc = "Find icons",
-		},
-		{
-			"<leader>fh",
-			function()
-				Snacks.picker.highlights()
-			end,
-			desc = "Find highlights",
-		},
-	},
+    ---@type snacks.Config
+    opts = {
+      picker = { enabled = true },
+      terminal = { enabled = true },
+      gh = { enabled = true },
+      bigfile = { enabled = true },
+      scratch = { enabled = true },
+      indent = { enabled = true, animate = { enabled = false } },
+      notifier = {
+        enabled = true,
+        padding = false,
+        gap = 1,
+      },
+    },
+  },
 }

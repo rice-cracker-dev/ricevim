@@ -2,95 +2,102 @@
 ---@module 'blink.cmp'
 ---@type LazySpec
 return {
-	"saghen/blink.cmp",
+  'saghen/blink.cmp',
+  dependencies = { 'fang2hou/blink-copilot' },
 
-	---@type blink.cmp.Config
-	opts = {
-		appearance = {
-			nerd_font_variant = "normal",
-			kind_icons = {
-				Text = "",
-				Method = "",
-				Function = "",
-				Constructor = "",
+  ---@type blink.cmp.Config
+  opts = {
+    appearance = {
+      nerd_font_variant = 'normal',
+      kind_icons = {
+        Text = '',
+        Method = '',
+        Function = '',
+        Constructor = '',
 
-				Field = "",
-				Variable = "",
-				Property = "",
+        Field = '',
+        Variable = '',
+        Property = '',
 
-				Class = "",
-				Interface = "",
-				Struct = "",
-				Module = "󰅩",
+        Class = '',
+        Interface = '',
+        Struct = '',
+        Module = '󰅩',
 
-				Unit = "",
-				Value = "",
-				Enum = "",
-				EnumMember = "",
+        Unit = '',
+        Value = '',
+        Enum = '',
+        EnumMember = '',
 
-				Keyword = "",
-				Constant = "",
+        Keyword = '',
+        Constant = '',
 
-				Snippet = "",
-				Color = "",
-				File = "",
-				Reference = "",
-				Folder = "",
-				Event = "",
-				Operator = "",
-				TypeParameter = "",
-			},
-		},
+        Snippet = '',
+        Color = '',
+        File = '',
+        Reference = '',
+        Folder = '',
+        Event = '',
+        Operator = '',
+        TypeParameter = '',
+      },
+    },
 
-		completion = {
-			list = {
-				selection = {
-					preselect = false,
-					auto_insert = false,
-				},
-			},
+    completion = {
+      list = {
+        selection = {
+          preselect = false,
+          auto_insert = false,
+        },
+      },
 
-			ghost_text = {
-				enabled = true,
-				auto_show = true,
-				show_with_menu = true,
-			},
+      ghost_text = {
+        enabled = true,
+        auto_show = true,
+        show_with_menu = true,
+      },
 
-			menu = {
-				draw = {
-					columns = { { "kind_icon" }, { "kind" }, { "label", "label_description", gap = 1 } },
-				},
-			},
-		},
+      menu = {
+        draw = {
+          columns = { { 'kind_icon' }, { 'kind' }, { 'label', 'label_description', gap = 1 } },
+        },
+      },
+    },
 
-		sources = {
-			default = {
-				"lazydev",
-				"lsp",
-				"path",
-				"snippets",
-				"buffer",
-			},
+    sources = {
+      default = {
+        'copilot',
+        'lazydev',
+        'lsp',
+        'path',
+        'snippets',
+        'buffer',
+      },
 
-			providers = {
-				lazydev = {
-					name = "LazyDev",
-					module = "lazydev.integrations.blink",
-					score_offset = 150,
-				},
+      providers = {
+        lazydev = {
+          name = 'LazyDev',
+          module = 'lazydev.integrations.blink',
+          score_offset = 100,
+        },
 
-				lsp = { score_offset = 100 },
-			},
-		},
+        copilot = {
+          name = 'copilot',
+          module = 'blink-copilot',
+          score_offset = 150,
+          async = true,
+        },
+      },
+    },
 
-		fuzzy = { implementation = "prefer_rust_with_warning" },
+    fuzzy = { implementation = 'prefer_rust_with_warning' },
 
-		keymap = {
-			preset = "enter",
+    keymap = {
+      preset = 'enter',
 
-			["<c-space>"] = { "show", "show_documentation", "show_signature" },
-			["<s-tab>"] = { "select_prev", "fallback" },
-			["<tab>"] = { "select_next", "fallback" },
-		},
-	},
+      ['<c-space>'] = { 'show', 'show_documentation', 'show_signature' },
+      ['<s-tab>'] = { 'select_prev', 'fallback' },
+      ['<tab>'] = { 'select_next', 'fallback' },
+    },
+  },
 }
