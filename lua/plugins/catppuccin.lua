@@ -2,6 +2,7 @@
 ---@type LazySpec
 return {
   'catppuccin/nvim',
+  name = 'catppuccin-nvim',
   priority = 1000,
 
   config = function()

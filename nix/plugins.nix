@@ -30,13 +30,13 @@
     ]);
 
   ts-error-translator = pkgs.vimUtils.buildVimPlugin {
-    name = "ts-error-translator";
+    name = "ts-error-translator.nvim";
     src = inputs.ts-error-translator;
   };
 
   direnv-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "direnv-nvim";
-    src = inputs.ts-error-translator;
+    name = "direnv.nvim";
+    src = inputs.direnv-nvim;
   };
 in {
   plugins = {
