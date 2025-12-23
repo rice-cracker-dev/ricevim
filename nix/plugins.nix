@@ -27,6 +27,8 @@
       qmljs
       jsdoc
       tsx
+      c
+      cpp
     ]);
 
   ts-error-translator = pkgs.vimUtils.buildVimPlugin {
