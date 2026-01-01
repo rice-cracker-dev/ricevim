@@ -70,6 +70,7 @@ in {
       nvim-cursorline
       fidget-nvim
       nvim-treesitter-with-grammars
+      nvim-ts-autotag
 
       # lazy
       lazydev-nvim
