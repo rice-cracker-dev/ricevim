@@ -7,6 +7,6 @@ return {
 
   ---@type wk.Opts
   opts = {
-    preset = 'modern',
+    preset = 'helix',
   },
 }

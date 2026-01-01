@@ -1,8 +1,8 @@
 ---@module 'lazy'
 ---@type LazySpec
 return {
-  'm4xshen/smartcolumn.nvim',
-  lazy = false,
+  'folke/trouble.nvim',
+  cmd = 'Trouble',
 
   opts = {},
 }

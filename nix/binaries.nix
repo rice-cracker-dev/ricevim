@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: let
+  clang-tools-old = inputs.nixpkgs-25-05.legacyPackages.${pkgs.stdenv.hostPlatform.system}.clang-tools;
+in {
   extraBinPath = with pkgs; [
     # lsps
     lua-language-server
@@ -12,7 +18,7 @@
     yaml-language-server
     basedpyright
     marksman
-    clang-tools
+    clang-tools-old
     kdePackages.qtdeclarative
 
     # formatters
@@ -35,5 +41,7 @@
     lazygit
     gemini-cli
     wl-clipboard
+    ripgrep
+    fd
   ];
 }

@@ -53,7 +53,6 @@ return {
 
       ghost_text = {
         enabled = true,
-        auto_show = true,
         show_with_menu = true,
       },
 

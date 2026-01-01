@@ -53,9 +53,7 @@ in {
       friendly-snippets
       nvim-lspconfig
       nui-nvim
-      nvim-treesitter-with-grammars
       SchemaStore-nvim
-      nvim-treesitter
     ];
 
     opt = with pkgs.vimPlugins; [
@@ -71,7 +69,7 @@ in {
       lualine-nvim
       nvim-cursorline
       fidget-nvim
-      smartcolumn-nvim
+      nvim-treesitter-with-grammars
 
       # lazy
       lazydev-nvim
@@ -82,6 +80,7 @@ in {
       blink-cmp
       blink-copilot
       neocord
+      trouble-nvim
     ];
   };
 }
