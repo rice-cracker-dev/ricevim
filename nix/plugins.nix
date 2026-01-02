@@ -20,6 +20,7 @@
       scss
       html
       markdown
+      markdown_inline
       astro
       vue
       dockerfile
@@ -29,6 +30,7 @@
       tsx
       c
       cpp
+      latex
     ]);
 
   ts-error-translator = pkgs.vimUtils.buildVimPlugin {
@@ -82,6 +84,9 @@ in {
       blink-copilot
       neocord
       trouble-nvim
+      markdown-preview-nvim
+      render-markdown-nvim
+      persistence-nvim
     ];
   };
 }
