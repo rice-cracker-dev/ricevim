@@ -51,6 +51,10 @@ return {
         },
       },
 
+      documentation = {
+        auto_show = true,
+      },
+
       ghost_text = {
         enabled = true,
         show_with_menu = true,
