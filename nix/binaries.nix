@@ -1,10 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: let
-  clang-tools-old = inputs.nixpkgs-25-05.legacyPackages.${pkgs.stdenv.hostPlatform.system}.clang-tools;
-in {
+{pkgs, ...}: {
   extraBinPath = with pkgs; [
     # lsps
     lua-language-server
@@ -18,7 +12,7 @@ in {
     yaml-language-server
     basedpyright
     marksman
-    clang-tools-old
+    clang-tools
     kdePackages.qtdeclarative
 
     # formatters
