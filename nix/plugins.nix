@@ -13,7 +13,6 @@
       javascript
       typescript
       json
-      jsonc
       svelte
       yaml
       css
