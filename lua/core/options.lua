@@ -17,6 +17,7 @@ vim.o.smarttab = true
 vim.o.shiftwidth = 2
 vim.o.tabstop = 2
 vim.o.expandtab = true
+vim.o.foldenable = false
 
 vim.o.number = true
 vim.o.relativenumber = true
@@ -27,6 +28,8 @@ vim.filetype.add({
     conf = 'conf',
     env = 'dotenv',
     hbs = 'html',
+    jsx = 'javascript.jsx',
+    tsx = 'typescript.tsx',
   },
 
   filename = {

@@ -3,8 +3,8 @@
   inputs,
   ...
 }: let
-  nvim-treesitter-with-grammars = pkgs.vimPlugins.nvim-treesitter.withPlugins (p:
-    with p; [
+  nvim-treesitter-with-grammars = pkgs.vimPlugins.nvim-treesitter.withPlugins (_:
+    with pkgs.vimPlugins.nvim-treesitter.grammarPlugins; [
       vim
       vimdoc
       lua
@@ -32,6 +32,12 @@
       latex
     ]);
 
+  nvim-treesitter-queries = with pkgs.vimPlugins.nvim-treesitter.queries; [
+    ecma
+    html_tags
+    jsx
+  ];
+
   ts-error-translator = pkgs.vimUtils.buildVimPlugin {
     name = "ts-error-translator.nvim";
     src = inputs.ts-error-translator;
@@ -48,14 +54,17 @@ in {
       impure = "/home/khoa/projects/ricevim";
     };
 
-    start = with pkgs.vimPlugins; [
-      lazy-nvim
-      plenary-nvim
-      friendly-snippets
-      nvim-lspconfig
-      nui-nvim
-      SchemaStore-nvim
-    ];
+    start = with pkgs.vimPlugins;
+      [
+        lazy-nvim
+        plenary-nvim
+        friendly-snippets
+        nvim-lspconfig
+        nui-nvim
+        SchemaStore-nvim
+        nvim-treesitter-with-grammars
+      ]
+      ++ nvim-treesitter-queries;
 
     opt = with pkgs.vimPlugins; [
       # non-lazy
@@ -70,7 +79,6 @@ in {
       lualine-nvim
       nvim-cursorline
       fidget-nvim
-      nvim-treesitter-with-grammars
       nvim-ts-autotag
 
       # lazy

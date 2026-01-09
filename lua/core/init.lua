@@ -1,4 +1,5 @@
 require('core.options')
+require('core.treesitter')
 require('core.plugins')
 require('core.mappings')
 require('core.lspconfig')
