@@ -5,7 +5,7 @@ return {
       command = { 'alejandra' },
     },
 
-    diagnostics = {
+    diagnostic = {
       suppress = { 'sema-primop-overridden' },
     },
   },
