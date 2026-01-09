@@ -78,7 +78,6 @@ in {
       which-key-nvim
       edgy-nvim
       copilot-lua
-      codecompanion-nvim
       blink-cmp
       blink-copilot
       neocord
@@ -86,6 +85,7 @@ in {
       markdown-preview-nvim
       render-markdown-nvim
       persistence-nvim
+      avante-nvim
     ];
   };
 }

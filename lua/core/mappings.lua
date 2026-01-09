@@ -148,9 +148,6 @@ wk.add({
   },
 
   { '<leader>a', group = 'Assistant', icon = '' },
-  { '<leader>ac', '<cmd>CodeCompanionChat<cr>', desc = 'Toggle chat' },
-  { '<leader>aa', '<cmd>CodeCompanionActions<cr>', mode = { 'n', 'v' }, desc = 'Actions' },
-  { '<leader>ap', '<cmd>CodeCompanion<cr>', mode = { 'n', 'v' }, desc = 'Prompt' },
 })
 
 vim.api.nvim_create_augroup('ricevim_lsp_mappings', { clear = true })
