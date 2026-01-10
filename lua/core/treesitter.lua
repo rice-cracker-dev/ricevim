@@ -20,10 +20,10 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 -- indent
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = '*',
-  group = treesitter_augroup,
-  callback = function()
-    vim.bo.indentexpr = 'v:lua.require\'nvim-treesitter\'.indentexpr()'
-  end,
-})
+-- vim.api.nvim_create_autocmd('FileType', {
+--   pattern = '*',
+--   group = treesitter_augroup,
+--   callback = function()
+--     vim.bo.indentexpr = 'v:lua.require\'nvim-treesitter\'.indentexpr()'
+--   end,
+-- })
