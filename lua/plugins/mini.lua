@@ -7,12 +7,7 @@ return {
 
   config = function()
     -- call twice to access MiniIcons.get on the second setup call
-    require('mini.icons').setup({
-      filetype = {
-        ['javascript.jsx'] = { glyph = '', hl = 'MiniIconsAzure' },
-        ['typescript.tsx'] = { glyph = '', hl = 'MiniIconsBlue' },
-      },
-    })
+    require('mini.icons').setup()
     MiniIcons.mock_nvim_web_devicons()
 
     -- general
