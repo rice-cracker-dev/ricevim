@@ -18,12 +18,3 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.wo[0][0].foldmethod = 'expr'
   end,
 })
-
--- indent
--- vim.api.nvim_create_autocmd('FileType', {
---   pattern = '*',
---   group = treesitter_augroup,
---   callback = function()
---     vim.bo.indentexpr = 'v:lua.require\'nvim-treesitter\'.indentexpr()'
---   end,
--- })

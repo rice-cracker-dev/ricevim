@@ -12,7 +12,7 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 
 vim.o.autoindent = true
-vim.o.smartindent = true
+vim.o.smartindent = false
 vim.o.smarttab = true
 vim.o.shiftwidth = 2
 vim.o.tabstop = 2
@@ -28,6 +28,8 @@ vim.filetype.add({
     conf = 'conf',
     env = 'dotenv',
     hbs = 'html',
+    jsx = 'javascript.jsx',
+    tsx = 'typescript.jsx',
   },
 
   filename = {

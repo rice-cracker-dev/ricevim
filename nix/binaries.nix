@@ -33,7 +33,6 @@
     # others
     curl
     lazygit
-    gemini-cli
     wl-clipboard
     ripgrep
     fd

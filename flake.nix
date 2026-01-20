@@ -3,15 +3,10 @@
 
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     mnw.url = "github:Gerg-L/mnw";
 
     # plugins
-    ts-error-translator = {
-      url = "github:dmmulroy/ts-error-translator.nvim";
-      flake = false;
-    };
-
     direnv-nvim = {
       url = "github:NotAShelf/direnv.nvim";
       flake = false;

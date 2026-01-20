@@ -32,17 +32,6 @@
       latex
     ]);
 
-  nvim-treesitter-queries = with pkgs.vimPlugins.nvim-treesitter.queries; [
-    ecma
-    html_tags
-    jsx
-  ];
-
-  ts-error-translator = pkgs.vimUtils.buildVimPlugin {
-    name = "ts-error-translator.nvim";
-    src = inputs.ts-error-translator;
-  };
-
   direnv-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "direnv.nvim";
     src = inputs.direnv-nvim;
@@ -54,17 +43,15 @@ in {
       impure = "/home/khoa/projects/ricevim";
     };
 
-    start = with pkgs.vimPlugins;
-      [
-        lazy-nvim
-        plenary-nvim
-        friendly-snippets
-        nvim-lspconfig
-        nui-nvim
-        SchemaStore-nvim
-        nvim-treesitter-with-grammars
-      ]
-      ++ nvim-treesitter-queries;
+    start = with pkgs.vimPlugins; [
+      lazy-nvim
+      plenary-nvim
+      friendly-snippets
+      nvim-lspconfig
+      nui-nvim
+      SchemaStore-nvim
+      nvim-treesitter-with-grammars
+    ];
 
     opt = with pkgs.vimPlugins; [
       # non-lazy
@@ -75,7 +62,6 @@ in {
       conform-nvim
       nvim-lint
       direnv-nvim
-      ts-error-translator
       lualine-nvim
       nvim-cursorline
       fidget-nvim
