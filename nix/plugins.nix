@@ -15,6 +15,7 @@
       json
       svelte
       yaml
+      typst
       css
       scss
       html
@@ -80,6 +81,7 @@ in {
       render-markdown-nvim
       persistence-nvim
       avante-nvim
+      typst-preview-nvim
     ];
   };
 }

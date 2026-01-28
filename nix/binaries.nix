@@ -14,6 +14,7 @@
     marksman
     clang-tools
     kdePackages.qtdeclarative
+    tinymist
 
     # formatters
     stylua
