@@ -15,11 +15,13 @@
     clang-tools
     kdePackages.qtdeclarative
     tinymist
+    rust-analyzer
 
     # formatters
     stylua
     alejandra
     prettierd
+    rustfmt
 
     # linters
     selene
@@ -27,6 +29,7 @@
     statix
     markdownlint-cli2
     ruff # also acts as formatter
+    clippy
 
     # runtimes
     nodejs
