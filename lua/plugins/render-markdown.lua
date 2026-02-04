@@ -3,11 +3,12 @@
 ---@type LazySpec
 return {
   'MeanderingProgrammer/render-markdown.nvim',
-  ft = { 'markdown', 'Avante' },
+  ft = { 'markdown', 'Avante', 'copilot-chat', 'opencode_output' },
   dependencies = { 'nvim-mini/mini.nvim' }, -- if you use the mini.nvim suite
 
   ---@type render.md.UserConfig
   opts = {
-    file_types = { 'markdown', 'Avante' },
+    anti_conceal = { enabled = false },
+    file_types = { 'markdown', 'opencode_output' },
   },
 }

@@ -147,7 +147,7 @@ wk.add({
     desc = 'Toggle Lazygit',
   },
 
-  { '<leader>a', group = 'Assistant', icon = '' },
+  { '<leader>o', group = 'Opencode', icon = '' },
 })
 
 vim.api.nvim_create_augroup('ricevim_lsp_mappings', { clear = true })

@@ -40,5 +40,7 @@
     wl-clipboard
     ripgrep
     fd
+    opencode
+    lsof
   ];
 }

@@ -80,8 +80,8 @@ in {
       markdown-preview-nvim
       render-markdown-nvim
       persistence-nvim
-      avante-nvim
       typst-preview-nvim
+      opencode-nvim
     ];
   };
 }
