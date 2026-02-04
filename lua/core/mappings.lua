@@ -13,7 +13,7 @@ wk.add({
   },
   { '<c-n>', '<cmd>Neotree toggle<cr>', desc = 'Toggle file tree' },
 
-  { '<leader>b', group = 'Buffer', icon = '' },
+  { '<leader>b', group = 'Buffer', icon = '' },
   {
     '<leader>bd',
     function()
@@ -46,7 +46,7 @@ wk.add({
     end,
     desc = 'Format [Conform]',
   },
-  { '<leader>lt', group = 'Trouble', icon = '' },
+  { '<leader>lt', group = 'Trouble', icon = '' },
   {
     '<leader>ltt',
     '<cmd>Trouble diagnostics toggle<cr>',
@@ -110,7 +110,7 @@ wk.add({
     desc = 'Highlights',
   },
 
-  { '<leader>g', group = 'Git', icon = '' },
+  { '<leader>g', group = 'Git', icon = '' },
   {
     '<leader>gi',
     function()
@@ -147,7 +147,65 @@ wk.add({
     desc = 'Toggle Lazygit',
   },
 
-  { '<leader>o', group = 'Opencode', icon = '' },
+  { '<leader>o', group = 'Opencode', icon = '' },
+  {
+    '<C-a>',
+    function()
+      require('opencode').ask('@this: ', { submit = true })
+    end,
+    mode = { 'n', 'x' },
+    desc = 'Ask opencode…',
+  },
+  {
+    '<C-x>',
+    function()
+      require('opencode').select()
+    end,
+    mode = { 'n', 'x' },
+    desc = 'Execute opencode action…',
+  },
+  {
+    '<C-.>',
+    function()
+      require('opencode').toggle()
+    end,
+    mode = { 'n', 't' },
+    desc = 'Toggle opencode',
+  },
+  {
+    'go',
+    function()
+      return require('opencode').operator('@this ')
+    end,
+    mode = { 'n', 'x' },
+    desc = 'Add range to opencode',
+    expr = true,
+  },
+  {
+    'goo',
+    function()
+      return require('opencode').operator('@this ') .. '_'
+    end,
+    desc = 'Add line to opencode',
+    expr = true,
+  },
+  {
+    '<S-C-u>',
+    function()
+      require('opencode').command('session.half.page.up')
+    end,
+    desc = 'Scroll opencode up',
+  },
+  {
+    '<S-C-d>',
+    function()
+      require('opencode').command('session.half.page.down')
+    end,
+    desc = 'Scroll opencode down',
+  },
+  -- Remap increment/decrement since <C-a> and <C-x> are used for opencode
+  { '+', '<C-a>', desc = 'Increment under cursor', noremap = true },
+  { '-', '<C-x>', desc = 'Decrement under cursor', noremap = true },
 })
 
 vim.api.nvim_create_augroup('ricevim_lsp_mappings', { clear = true })

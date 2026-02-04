@@ -4,7 +4,7 @@
 return {
   'nvim-lualine/lualine.nvim',
   lazy = false,
-  dependencies = { 'NotAShelf/direnv.nvim' },
+  dependencies = { 'NotAShelf/direnv.nvim', 'nickjvandyke/opencode.nvim' },
 
   opts = function()
     local trouble = require('trouble')
@@ -36,6 +36,9 @@ return {
           'encoding',
           'fileformat',
           'filetype',
+        },
+        lualine_z = {
+          require('opencode').statusline,
         },
       },
     }
