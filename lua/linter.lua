@@ -4,6 +4,8 @@
 ---@field patterns? (string | string[])
 
 local M = {}
+local lint = require('lint')
+local utils = require('utils')
 
 M.linters_by_ft = {
   lua = { 'selene' },
@@ -24,23 +26,45 @@ M.linters_by_ft = {
   python = { 'ruff' },
 }
 
+---@type table<string, linter.Linter>
+local linters = {}
+local config_files = vim.api.nvim_get_runtime_file('lua/linters/*.lua', true)
+
+for _, path in ipairs(config_files) do
+  local name = utils.get_file_name_no_ext(path)
+  ---@type linter.Linter
+  local config = dofile(path)
+  local baseLinter = lint.linters[name]
+
+  if type(baseLinter) == 'function' then
+    baseLinter = baseLinter()
+  end
+
+  ---@diagnostic disable-next-line
+  linters[name] = vim.tbl_deep_extend('force', baseLinter, config)
+end
+
+vim.g.linters = linters
+
 ---@type fun(buf: integer)
 function M.lint(buf)
   buf = buf or vim.api.nvim_get_current_buf()
 
-  local lint = require('lint')
   local ft = vim.api.nvim_get_option_value('filetype', { buf = buf })
-  local linters = M.linters_by_ft[ft]
+  local linter_names = M.linters_by_ft[ft]
 
-  if linters == nil then
+  if linter_names == nil then
     return
   end
 
-  for _, name in ipairs(linters) do
-    ---@type linter.Linter
-    ---@diagnostic disable-next-line
-    local linter = lint.linters[name]
+  for _, name in ipairs(linter_names) do
+    ---@type linter.Linter|lint.Linter|fun(): lint.Linter
+    local linter = linters[name] or lint.linters[name]
     assert(linter, 'Linter with name `' .. name .. '` not available')
+
+    if type(linter) == 'function' then
+      linter = linter()
+    end
 
     local patterns = linter.patterns
     linter.name = linter.name or name
