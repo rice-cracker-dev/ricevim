@@ -82,6 +82,7 @@ in {
       persistence-nvim
       typst-preview-nvim
       opencode-nvim
+      noice-nvim
     ];
   };
 }
