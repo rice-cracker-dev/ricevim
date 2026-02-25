@@ -33,9 +33,16 @@
       latex
     ]);
 
-  direnv-nvim = pkgs.vimUtils.buildVimPlugin {
+  direnv-nvim-source = pkgs.vimUtils.buildVimPlugin {
     name = "direnv.nvim";
     src = inputs.direnv-nvim;
+  };
+
+  opencode-nvim-source = pkgs.vimUtils.buildVimPlugin {
+    name = "opencode.nvim";
+    src = inputs.opencode-nvim;
+    dependencies = with pkgs; [vimPlugins.plenary-nvim];
+    buildInputs = with pkgs; [opencode];
   };
 in {
   plugins = {
@@ -62,7 +69,7 @@ in {
       catppuccin-nvim
       conform-nvim
       nvim-lint
-      direnv-nvim
+      direnv-nvim-source
       lualine-nvim
       nvim-cursorline
       fidget-nvim
@@ -81,7 +88,7 @@ in {
       render-markdown-nvim
       persistence-nvim
       typst-preview-nvim
-      opencode-nvim
+      opencode-nvim-source
       noice-nvim
     ];
   };

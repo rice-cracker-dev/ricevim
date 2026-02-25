@@ -80,12 +80,29 @@
         "type": "github"
       }
     },
+    "opencode-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1771934032,
+        "narHash": "sha256-kvk4rz5o/LY4I0Te+8vXn9zI3SPGHKvF8xYH3tSrnGU=",
+        "owner": "sudo-tee",
+        "repo": "opencode.nvim",
+        "rev": "f18d895195adef42b9d321a9049dfea0c397ab6f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sudo-tee",
+        "repo": "opencode.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "direnv-nvim": "direnv-nvim",
         "flake-parts": "flake-parts",
         "mnw": "mnw",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "opencode-nvim": "opencode-nvim"
       }
     }
   },

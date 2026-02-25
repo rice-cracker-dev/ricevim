@@ -11,6 +11,11 @@
       url = "github:NotAShelf/direnv.nvim";
       flake = false;
     };
+
+    opencode-nvim = {
+      url = "github:sudo-tee/opencode.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {
