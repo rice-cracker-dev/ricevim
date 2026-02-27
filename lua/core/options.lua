@@ -28,8 +28,6 @@ vim.filetype.add({
     conf = 'conf',
     env = 'dotenv',
     hbs = 'html',
-    jsx = 'javascript.jsx',
-    tsx = 'typescript.jsx',
   },
 
   filename = {
