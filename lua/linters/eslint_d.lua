@@ -1,6 +1,5 @@
 return {
   args = {
-    '--no-warn-ignored',
     '--format',
     'json',
     '--stdin',
