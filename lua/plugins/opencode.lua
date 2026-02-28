@@ -1,19 +1,51 @@
 ---@module 'lazy'
----@module 'snacks'
+---@module 'edgy'
 ---@type LazySpec
 return {
-  'sudo-tee/opencode.nvim',
+  {
+    'sudo-tee/opencode.nvim',
 
-  dependencies = {
-    'MeanderingProgrammer/render-markdown.nvim',
-    'saghen/blink.cmp',
-    'folke/snacks.nvim',
-  },
+    dependencies = {
+      'MeanderingProgrammer/render-markdown.nvim',
+      'saghen/blink.cmp',
+      'folke/snacks.nvim',
+    },
 
-  config = function()
-    require('opencode').setup({
+    opts = {
       preferred_picker = 'snacks',
       preferred_completion = 'blink',
-    })
-  end,
+
+      ui = {
+        input = {
+          min_height = 0.25,
+          max_height = 0.25,
+        },
+      },
+    },
+  },
+
+  {
+    'folke/edgy.nvim',
+
+    ---@type Edgy.Config
+    opts = {
+      right = {
+        {
+          ft = 'opencode_output',
+          wo = {
+            winbar = false,
+            winhighlight = 'Normal:OpencodeBackground',
+          },
+        },
+        {
+          ft = 'opencode',
+          size = { height = 8 },
+          wo = {
+            winbar = false,
+            winhighlight = 'Normal:OpencodeBackground',
+          },
+        },
+      },
+    },
+  },
 }
