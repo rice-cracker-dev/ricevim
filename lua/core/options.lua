@@ -11,8 +11,6 @@ vim.o.splitkeep = 'screen'
 vim.o.splitbelow = true
 vim.o.splitright = true
 
-vim.o.autoindent = true
-vim.o.smartindent = false
 vim.o.smarttab = true
 vim.o.shiftwidth = 2
 vim.o.tabstop = 2
