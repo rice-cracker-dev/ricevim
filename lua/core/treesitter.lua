@@ -21,6 +21,7 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.wo[0][0].foldmethod = 'expr'
 
     -- indent
-    vim.bo.indentexpr = 'v:lua.require\'nvim-treesitter\'.indentexpr()'
+    -- still buggy as hell
+    -- vim.bo.indentexpr = 'v:lua.require\'nvim-treesitter\'.indentexpr()'
   end,
 })
