@@ -27,7 +27,6 @@
     selene
     eslint_d
     statix
-    markdownlint-cli2
     ruff # also acts as formatter
     clippy
 

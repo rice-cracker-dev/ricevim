@@ -21,7 +21,6 @@ M.linters_by_ft = {
   scss = { 'eslint_d' },
   less = { 'eslint_d' },
   yaml = { 'eslint_d' },
-  markdown = { 'markdownlint-cli2' },
   nix = { 'statix' },
   python = { 'ruff' },
 }
