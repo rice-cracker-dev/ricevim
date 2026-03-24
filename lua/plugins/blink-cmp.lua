@@ -3,7 +3,6 @@
 ---@type LazySpec
 return {
   'saghen/blink.cmp',
-  dependencies = { 'fang2hou/blink-copilot' },
 
   ---@type blink.cmp.Config
   opts = {
@@ -69,7 +68,6 @@ return {
 
     sources = {
       default = {
-        'copilot',
         'lazydev',
         'lsp',
         'path',
@@ -82,13 +80,6 @@ return {
           name = 'LazyDev',
           module = 'lazydev.integrations.blink',
           score_offset = 100,
-        },
-
-        copilot = {
-          name = 'copilot',
-          module = 'blink-copilot',
-          score_offset = 150,
-          async = true,
         },
       },
     },

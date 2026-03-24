@@ -79,9 +79,7 @@ in {
       lazydev-nvim
       which-key-nvim
       edgy-nvim
-      copilot-lua
       blink-cmp
-      blink-copilot
       neocord
       trouble-nvim
       markdown-preview-nvim
