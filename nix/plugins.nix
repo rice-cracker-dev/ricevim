@@ -56,13 +56,10 @@ in {
       plenary-nvim
       friendly-snippets
       nvim-lspconfig
+      nui-nvim
       SchemaStore-nvim
       nvim-treesitter-with-grammars
     ];
-
-    startAttrs = {
-      "nui.nvim" = null;
-    };
 
     opt = with pkgs.vimPlugins; [
       # non-lazy
@@ -77,7 +74,6 @@ in {
       nvim-cursorline
       fidget-nvim
       nvim-ts-autotag
-      nui-nvim
 
       # lazy
       lazydev-nvim
