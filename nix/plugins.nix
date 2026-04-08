@@ -74,6 +74,7 @@ in {
       nvim-cursorline
       fidget-nvim
       nvim-ts-autotag
+      diagflow-nvim
 
       # lazy
       lazydev-nvim
@@ -87,7 +88,6 @@ in {
       persistence-nvim
       typst-preview-nvim
       opencode-nvim-source
-      noice-nvim
     ];
   };
 }

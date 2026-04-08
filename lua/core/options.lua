@@ -21,6 +21,7 @@ vim.o.foldenable = false
 
 vim.o.number = true
 vim.o.relativenumber = true
+vim.o.guicursor = 'n-c:block-Cursor,i:block-CursorInsert,v:block-CursorVisual'
 
 vim.filetype.add({
   extension = {

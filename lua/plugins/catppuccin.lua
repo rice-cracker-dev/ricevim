@@ -24,6 +24,13 @@ return {
         blink_cmp = true,
         snacks = true,
       },
+
+      custom_highlights = function(colors)
+        return {
+          CursorInsert = { bg = colors.green, fg = colors.green },
+          CursorVisual = { bg = colors.blue, fg = colors.blue },
+        }
+      end,
     })
 
     vim.cmd.colorscheme('catppuccin')

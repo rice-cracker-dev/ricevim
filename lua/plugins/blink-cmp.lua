@@ -50,6 +50,10 @@ return {
         },
       },
 
+      trigger = {
+        show_on_trigger_character = false,
+      },
+
       documentation = {
         auto_show = true,
       },
