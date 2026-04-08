@@ -12,135 +12,57 @@ wk.add({
     desc = 'Toggle terminal',
   },
   { '<c-n>', '<cmd>Neotree toggle<cr>', desc = 'Toggle file tree' },
-
-  { '<leader>b', group = 'Buffer', icon = '' },
   {
-    '<leader>bd',
-    function()
-      Snacks.bufdelete()
-    end,
-    desc = 'Delete buffer',
-  },
-  { '<leader>bn', '<cmd>bn<cr>', desc = 'Next buffer' },
-  { '<leader>bp', '<cmd>bp<cr>', desc = 'Previous buffer' },
-  {
-    '<leader>bs',
-    function()
-      Snacks.scratch()
-    end,
-    desc = 'Toggle scratch buffer',
-  },
-  {
-    '<leader>bS',
-    function()
-      Snacks.scratch.select()
-    end,
-    desc = 'Select scratch buffer',
-  },
-
-  { '<leader>l', group = 'LSP', icon = '󰅴' },
-  {
-    '<leader>lf',
-    function()
-      require('conform').format()
-    end,
-    desc = 'Format [Conform]',
-  },
-  { '<leader>lt', group = 'Trouble', icon = '' },
-  {
-    '<leader>ltt',
-    '<cmd>Trouble diagnostics toggle<cr>',
-    desc = 'Diagnostics',
-  },
-  {
-    '<leader>ltb',
-    '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
-    desc = 'Buffer',
-  },
-  {
-    '<leader>lts',
-    '<cmd>Trouble symbols toggle focus=false<cr>',
-    desc = 'Symbols',
-  },
-  {
-    '<leader>ltl',
-    '<cmd>Trouble loclist toggle<cr>',
-    desc = 'Location list',
-  },
-  {
-    '<leader>ltq',
-    '<cmd>Trouble qflist toggle<cr>',
-    desc = 'Quickfix list',
-  },
-
-  { '<leader>f', group = 'Picker', icon = '󰍉' },
-  {
-    '<leader>ff',
+    '<leader>f',
     function()
       Snacks.picker.files(constants.snacks_picker_files_config)
     end,
-    desc = 'Files',
+    desc = 'Pick files',
   },
   {
-    '<leader>fg',
+    '<leader>g',
     function()
       Snacks.picker.grep(constants.snacks_picker_grep_config)
     end,
-    desc = 'Grep files',
+    desc = 'Live grep',
   },
   {
-    '<leader>fb',
+    '<leader>b',
     function()
       Snacks.picker.buffers()
     end,
-    desc = 'Buffers',
+    desc = 'Pick buffers',
   },
   {
-    '<leader>fi',
+    '<leader>s',
+    function()
+      Snacks.picker.lsp_symbols()
+    end,
+    desc = 'Pick symbols',
+  },
+  {
+    '<leader>S',
+    function()
+      Snacks.picker.lsp_symbols()
+    end,
+    desc = 'Pick workspace symbols',
+  },
+  {
+    '<leader>i',
     function()
       Snacks.picker.icons()
     end,
-    desc = 'Icons',
+    desc = 'Pick icons',
   },
   {
-    '<leader>fh',
+    '<leader>h',
     function()
       Snacks.picker.highlights()
     end,
-    desc = 'Highlights',
-  },
-
-  { '<leader>g', group = 'Git', icon = '' },
-  {
-    '<leader>gi',
-    function()
-      Snacks.picker.gh_issue()
-    end,
-    desc = 'GitHub Issues (open)',
+    desc = 'Pick highlights',
   },
   {
-    '<leader>gI',
-    function()
-      Snacks.picker.gh_issue({ state = 'all' })
-    end,
-    desc = 'GitHub Issues (all)',
-  },
-  {
-    '<leader>gp',
-    function()
-      Snacks.picker.gh_pr()
-    end,
-    desc = 'GitHub Pull Requests (open)',
-  },
-  {
-    '<leader>gP',
-    function()
-      Snacks.picker.gh_pr({ state = 'all' })
-    end,
-    desc = 'GitHub Pull Requests (all)',
-  },
-  {
-    '<leader>gg',
+    '<leader>G',
     function()
       Snacks.lazygit()
     end,
@@ -152,13 +74,13 @@ vim.api.nvim_create_augroup('ricevim_lsp_mappings', { clear = true })
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
     wk.add({
-      { '<leader>lgd', vim.lsp.buf.definition, desc = 'Go to definition', buffer = args.buf },
-      { '<leader>lgD', vim.lsp.buf.declaration, desc = 'Go to declaration', buffer = args.buf },
-      { '<leader>lgt', vim.lsp.buf.type_definition, desc = 'Go to type definition', buffer = args.buf },
-      { '<leader>lgi', vim.lsp.buf.implementation, desc = 'List implementations', buffer = args.buf },
-      { '<leader>lgr', vim.lsp.buf.references, desc = 'List implementations', buffer = args.buf },
+      { 'gd', vim.lsp.buf.definition, desc = 'Go to definition', buffer = args.buf },
+      { 'gD', vim.lsp.buf.declaration, desc = 'Go to declaration', buffer = args.buf },
+      { 'gy', vim.lsp.buf.type_definition, desc = 'Go to type definition', buffer = args.buf },
+      { 'gi', vim.lsp.buf.implementation, desc = 'List implementations', buffer = args.buf },
+      { 'gr', vim.lsp.buf.references, desc = 'List implementations', buffer = args.buf },
       {
-        '<leader>lgn',
+        ']d',
         function()
           vim.diagnostic.jump({ count = 1, float = true })
         end,
@@ -166,20 +88,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
         buffer = args.buf,
       },
       {
-        '<leader>lgp',
+        '[d',
         function()
           vim.diagnostic.jump({ count = -1, float = true })
         end,
         desc = 'Go to previous diagnostic',
         buffer = args.buf,
       },
-      { '<leader>le', vim.diagnostic.open_float, desc = 'Open diagnostic float', buffer = args.buf },
-      { '<leader>lH', vim.lsp.buf.document_highlight, desc = 'Document highlight', buffer = args.buf },
-      { '<leader>lS', vim.lsp.buf.document_symbol, desc = 'Document symbols', buffer = args.buf },
-      { '<leader>lh', vim.lsp.buf.hover, desc = 'Hover', buffer = args.buf },
-      { '<leader>ls', vim.lsp.buf.signature_help, desc = 'Signature help', buffer = args.buf },
-      { '<leader>lr', vim.lsp.buf.rename, desc = 'Rename symbol', buffer = args.buf },
-      { '<leader>la', vim.lsp.buf.code_action, desc = 'Code action', buffer = args.buf },
+      { '<leader>K', vim.diagnostic.open_float, desc = 'Open diagnostic float', buffer = args.buf },
+      { '<leader>k', vim.lsp.buf.hover, desc = 'Hover', buffer = args.buf },
+      { '<leader>r', vim.lsp.buf.rename, desc = 'Rename symbol', buffer = args.buf },
+      { '<leader>a', vim.lsp.buf.code_action, desc = 'Code action', buffer = args.buf },
     })
   end,
 })
