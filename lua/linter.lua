@@ -9,18 +9,6 @@ local utils = require('utils')
 
 M.linters_by_ft = {
   lua = { 'selene' },
-  javascript = { 'eslint_d' },
-  typescript = { 'eslint_d' },
-  javascriptreact = { 'eslint_d' },
-  typescriptreact = { 'eslint_d' },
-  html = { 'eslint_d' },
-  vue = { 'eslint_d' },
-  svelte = { 'eslint_d' },
-  astro = { 'eslint_d' },
-  css = { 'eslint_d' },
-  scss = { 'eslint_d' },
-  less = { 'eslint_d' },
-  yaml = { 'eslint_d' },
   nix = { 'statix' },
   python = { 'ruff' },
 }
