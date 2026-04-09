@@ -59,6 +59,7 @@ in {
       nui-nvim
       SchemaStore-nvim
       nvim-treesitter-with-grammars
+      nvim-ts-context-commentstring
     ];
 
     opt = with pkgs.vimPlugins; [

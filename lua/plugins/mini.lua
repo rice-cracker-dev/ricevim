@@ -20,7 +20,20 @@ return {
     require('mini.diff').setup()
 
     -- text editing
-    require('mini.comment').setup()
+    require('mini.comment').setup({
+      options = {
+        custom_commentstring = function()
+          return require('ts_context_commentstring.internal').calculate_commentstring() or vim.bo.commentstring
+        end,
+      },
+
+      mappings = {
+        comment = '<leader>c',
+        comment_line = '<leader>c',
+        comment_visual = '<leader>c',
+        textobject = '<leader>c',
+      },
+    })
     require('mini.pairs').setup()
     require('mini.surround').setup()
     require('mini.splitjoin').setup()
