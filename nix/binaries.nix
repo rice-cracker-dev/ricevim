@@ -17,7 +17,7 @@
     basedpyright
     marksman
     clang-tools
-    #kdePackages.qtdeclarative # replaced by qml-language-server
+    kdePackages.qtdeclarative # replaced by qml-language-server, only used for linting and formatting
     inputs'.qml-language-server.packages.default
     tinymist
     rust-analyzer
