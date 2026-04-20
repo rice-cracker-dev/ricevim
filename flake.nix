@@ -6,6 +6,9 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     mnw.url = "github:Gerg-L/mnw";
 
+    # lsps
+    qml-language-server.url = "github:cushycush/qml-language-server";
+
     # plugins
     direnv-nvim = {
       url = "github:NotAShelf/direnv.nvim";
