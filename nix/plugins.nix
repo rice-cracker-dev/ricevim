@@ -31,6 +31,7 @@
       c
       cpp
       latex
+      nu
     ]);
 
   direnv-nvim-source = pkgs.vimUtils.buildVimPlugin {

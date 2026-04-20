@@ -18,6 +18,7 @@ M.formatters_by_ft = {
   graphql = { 'prettierd' },
   nix = { 'alejandra' },
   python = { 'ruff' },
+  nu = { 'nufmt' },
 }
 
 return M

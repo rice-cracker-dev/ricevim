@@ -21,12 +21,14 @@
     inputs'.qml-language-server.packages.default
     tinymist
     rust-analyzer
+    nushell
 
     # formatters
     stylua
     alejandra
     prettierd
     rustfmt
+    nufmt
 
     # linters
     selene
