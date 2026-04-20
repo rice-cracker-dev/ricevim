@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs',
+  ...
+}: {
   extraBinPath = with pkgs; [
     # lsps
     lua-language-server
@@ -13,7 +17,8 @@
     basedpyright
     marksman
     clang-tools
-    kdePackages.qtdeclarative
+    #kdePackages.qtdeclarative # replaced by qml-language-server
+    inputs'.qml-language-server.packages.default
     tinymist
     rust-analyzer
 

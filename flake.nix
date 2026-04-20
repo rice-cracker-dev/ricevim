@@ -6,6 +6,9 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     mnw.url = "github:Gerg-L/mnw";
 
+    # lsps
+    qml-language-server.url = "github:cushycush/qml-language-server";
+
     # plugins
     direnv-nvim = {
       url = "github:NotAShelf/direnv.nvim";
@@ -25,8 +28,12 @@
   }:
     flake-parts.lib.mkFlake {inherit inputs;} {
       systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin"];
-      perSystem = {pkgs, ...}: let
-        neovim = mnw.lib.wrap {inherit inputs pkgs;} ./nix;
+      perSystem = {
+        pkgs,
+        inputs',
+        ...
+      }: let
+        neovim = mnw.lib.wrap {inherit inputs inputs' pkgs;} ./nix;
       in {
         packages = {
           inherit neovim;
