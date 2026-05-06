@@ -79,6 +79,7 @@ in {
       fidget-nvim
       nvim-ts-autotag
       diagflow-nvim
+      otter-nvim
 
       # lazy
       lazydev-nvim
