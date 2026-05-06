@@ -17,8 +17,8 @@ require('lazy').setup({
   },
 
   install = {
-    -- install missing plugins
-    missing = true,
+    -- don't install missing plugins
+    missing = false,
   },
 
   spec = {
