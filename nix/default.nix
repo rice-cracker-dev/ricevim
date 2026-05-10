@@ -4,7 +4,8 @@
     ./plugins.nix
   ];
 
-  enable = true;
+  appName = "ricevim";
+
   aliases = ["vim" "vi"];
   initLua = "require('core')";
 }
