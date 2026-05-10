@@ -20,7 +20,7 @@ wk.add({
     desc = 'Pick files',
   },
   {
-    '<leader>g',
+    '<leader>/',
     function()
       Snacks.picker.grep(constants.snacks_picker_grep_config)
     end,
