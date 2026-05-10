@@ -80,6 +80,7 @@ in {
       nvim-ts-autotag
       diagflow-nvim
       otter-nvim
+      diffview-nvim
 
       # lazy
       lazydev-nvim
@@ -93,6 +94,7 @@ in {
       persistence-nvim
       typst-preview-nvim
       opencode-nvim-source
+      neogit
     ];
   };
 }

@@ -62,11 +62,9 @@ wk.add({
     desc = 'Pick highlights',
   },
   {
-    '<leader>G',
-    function()
-      Snacks.lazygit()
-    end,
-    desc = 'Toggle Lazygit',
+    '<leader>g',
+    '<cmd>Neogit<cr>',
+    desc = 'Toggle Neogit',
   },
 })
 
