@@ -7,8 +7,6 @@ return {
 
     dependencies = {
       'MeanderingProgrammer/render-markdown.nvim',
-      'saghen/blink.cmp',
-      'folke/snacks.nvim',
     },
 
     opts = {

@@ -1,3 +1,10 @@
+local corePlugins = vim.api.nvim_get_runtime_file('lua/plugins/core/*.lua', true)
+
+for _, plugin in ipairs(corePlugins) do
+  dofile(plugin)
+end
+
+-- lazy
 require('lazy').setup({
   dev = {
     path = mnw.configDir .. '/pack/mnw/opt',
@@ -22,6 +29,6 @@ require('lazy').setup({
   },
 
   spec = {
-    { import = 'plugins' },
+    { import = 'plugins.lazy' },
   },
 })

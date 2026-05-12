@@ -1,41 +1,9 @@
 {
   pkgs,
   inputs,
+  inputs',
   ...
 }: let
-  nvim-treesitter-with-grammars = pkgs.vimPlugins.nvim-treesitter.withPlugins (_:
-    with pkgs.vimPlugins.nvim-treesitter.grammarPlugins; [
-      vim
-      vimdoc
-      lua
-      query
-      nix
-      javascript
-      typescript
-      json
-      svelte
-      yaml
-      typst
-      css
-      scss
-      html
-      markdown
-      markdown_inline
-      astro
-      vue
-      dockerfile
-      python
-      qmljs
-      jsdoc
-      tsx
-      c
-      cpp
-      latex
-      nu
-      kdl
-      comment
-    ]);
-
   direnv-nvim-source = pkgs.vimUtils.buildVimPlugin {
     name = "direnv.nvim";
     src = inputs.direnv-nvim;
@@ -50,8 +18,8 @@
 in {
   plugins = {
     dev.ricevim = {
-      pure = ../.;
-      impure = "/home/khoa/projects/ricevim";
+      pure = ../nvim;
+      impure = "~/projects/ricevim/nvim";
     };
 
     start = with pkgs.vimPlugins; [
@@ -61,15 +29,12 @@ in {
       nvim-lspconfig
       nui-nvim
       SchemaStore-nvim
-      nvim-treesitter-with-grammars
+      nvim-treesitter.withAllGrammars
       nvim-ts-context-commentstring
-    ];
-
-    opt = with pkgs.vimPlugins; [
-      # non-lazy
-      neo-tree-nvim
+      inputs'.blink-cmp.packages.default
       snacks-nvim
       mini-nvim
+      oil-nvim
       catppuccin-nvim
       conform-nvim
       nvim-lint
@@ -79,14 +44,14 @@ in {
       fidget-nvim
       nvim-ts-autotag
       diagflow-nvim
-      otter-nvim
       diffview-nvim
+    ];
 
-      # lazy
+    # lazy plugins
+    opt = with pkgs.vimPlugins; [
       lazydev-nvim
       which-key-nvim
       edgy-nvim
-      blink-cmp
       neocord
       trouble-nvim
       markdown-preview-nvim

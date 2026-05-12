@@ -4,7 +4,6 @@
 return {
   'MeanderingProgrammer/render-markdown.nvim',
   ft = { 'markdown', 'Avante', 'copilot-chat', 'opencode_output' },
-  dependencies = { 'nvim-mini/mini.nvim' }, -- if you use the mini.nvim suite
 
   ---@type render.md.UserConfig
   opts = {

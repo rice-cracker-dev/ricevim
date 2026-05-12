@@ -11,7 +11,7 @@ wk.add({
     end,
     desc = 'Toggle terminal',
   },
-  { '<c-n>', '<cmd>Neotree toggle<cr>', desc = 'Toggle file tree' },
+  { '<c-n>', '<cmd>Oil<cr>', desc = 'Toggle Oil' },
   {
     '<leader>f',
     function()

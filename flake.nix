@@ -10,6 +10,8 @@
     qml-language-server.url = "github:cushycush/qml-language-server";
 
     # plugins
+    blink-cmp.url = "github:saghen/blink.cmp";
+
     direnv-nvim = {
       url = "github:NotAShelf/direnv.nvim";
       flake = false;
