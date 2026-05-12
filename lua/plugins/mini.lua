@@ -37,8 +37,5 @@ return {
     require('mini.pairs').setup()
     require('mini.surround').setup()
     require('mini.splitjoin').setup()
-
-    -- appearance
-    require('mini.tabline').setup()
   end,
 }
