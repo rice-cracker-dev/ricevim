@@ -4,7 +4,7 @@ require('lualine').setup({
   sections = {
     lualine_x = {
       function()
-        return require('nvim.lua.plugins.core.direnv').statusline()
+        return require('direnv').statusline()
       end,
       'encoding',
       'fileformat',
