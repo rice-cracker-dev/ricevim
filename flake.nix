@@ -24,6 +24,7 @@
   };
 
   outputs = inputs @ {
+    nixpkgs,
     flake-parts,
     mnw,
     ...
@@ -33,10 +34,18 @@
       perSystem = {
         pkgs,
         inputs',
+        system,
         ...
       }: let
         neovim = mnw.lib.wrap {inherit inputs inputs' pkgs;} ./nix;
       in {
+        _module.args = {
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
+
         packages = {
           inherit neovim;
           inherit (neovim) devMode;
