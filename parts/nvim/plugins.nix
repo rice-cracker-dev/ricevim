@@ -17,11 +17,6 @@
   };
 in {
   plugins = {
-    dev.ricevim = {
-      pure = ../nvim;
-      impure = "~/projects/ricevim/nvim";
-    };
-
     start = with pkgs.vimPlugins; [
       lazy-nvim
       plenary-nvim

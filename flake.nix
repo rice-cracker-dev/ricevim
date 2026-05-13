@@ -23,48 +23,8 @@
     };
   };
 
-  outputs = inputs @ {
-    nixpkgs,
-    flake-parts,
-    mnw,
-    ...
-  }:
+  outputs = inputs @ {flake-parts, ...}:
     flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin"];
-      perSystem = {
-        pkgs,
-        inputs',
-        system,
-        ...
-      }: let
-        neovim = mnw.lib.wrap {inherit inputs inputs' pkgs;} ./nix;
-      in {
-        _module.args = {
-          pkgs = import nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-          };
-        };
-
-        packages = {
-          inherit neovim;
-          inherit (neovim) devMode;
-
-          default = neovim;
-        };
-
-        formatter = pkgs.writeShellApplication {
-          name = "formatter";
-          runtimeInputs = with pkgs; [stylua alejandra];
-          text = ''
-            stylua -v .
-            alejandra .
-          '';
-        };
-
-        devShells.default = pkgs.mkShell {
-          packages = with pkgs; [stylua alejandra];
-        };
-      };
+      imports = [./parts];
     };
 }

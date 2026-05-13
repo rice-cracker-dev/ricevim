@@ -1,0 +1,24 @@
+{
+  "pins": {
+    "hyprland": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "hyprwm",
+        "repo": "hyprland"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "b034fa53819fc35b982c22bc5ea7b32fd7def776",
+      "url": "https://github.com/hyprwm/hyprland/archive/b034fa53819fc35b982c22bc5ea7b32fd7def776.tar.gz",
+      "hash": "sha256-mVNshX6kDO+SqR5oFqFEi/zuLbqJc4JpOzWR2hwvK9A="
+    },
+    "nixpkgs": {
+      "type": "Channel",
+      "name": "nixpkgs-unstable",
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre996527.48d91f2c0ce7/nixexprs.tar.xz",
+      "hash": "sha256-RmPrrfjRTwLZo9DhtwYjPH+TClmPZO5rufdl+rp7kio="
+    }
+  },
+  "version": 7
+}
