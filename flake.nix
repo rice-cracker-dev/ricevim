@@ -31,7 +31,7 @@
     flake-parts.lib.mkFlake {inherit inputs;} {
       systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin"];
       flake = {
-        nixosModules.default = import ./nix/nixos.nix;
+        nixosModules.default = import ./nix/nixos.nix inputs;
       };
       perSystem = {
         pkgs,
