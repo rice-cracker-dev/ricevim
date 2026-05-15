@@ -1,5 +1,4 @@
 vim.keymap.set({ 'n', 'v' }, ' ', '<Nop>', { silent = true, remap = false })
-vim.g.mapleader = ' '
 
 vim.o.clipboard = 'unnamedplus'
 vim.o.undofile = true
@@ -18,6 +17,7 @@ vim.o.shiftwidth = 2
 vim.o.tabstop = 2
 vim.o.expandtab = true
 vim.o.foldenable = false
+vim.opt.fillchars = { eob = ' ' }
 
 vim.o.number = true
 vim.o.relativenumber = true

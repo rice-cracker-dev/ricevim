@@ -1,10 +1,4 @@
-local corePlugins = vim.api.nvim_get_runtime_file('lua/plugins/core/*.lua', true)
-
-for _, plugin in ipairs(corePlugins) do
-  dofile(plugin)
-end
-
--- lazy
+vim.g.mapleader = ' '
 require('lazy').setup({
   dev = {
     path = mnw.configDir .. '/pack/mnw/opt',

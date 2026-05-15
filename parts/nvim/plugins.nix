@@ -26,12 +26,7 @@ in {
       SchemaStore-nvim
       nvim-treesitter.withAllGrammars
       nvim-ts-context-commentstring
-      snacks-nvim
-      mini-nvim
-      catppuccin-nvim
       nvim-lint
-      direnv-nvim-source
-      fidget-nvim
     ];
 
     # lazy plugins
@@ -55,6 +50,11 @@ in {
       nvim-ts-autotag
       oil-nvim
       diffview-nvim
+      direnv-nvim-source
+      fidget-nvim
+      snacks-nvim
+      mini-nvim
+      catppuccin-nvim
     ];
   };
 }

@@ -13,13 +13,12 @@ M.linters_by_ft = {
   python = { 'ruff' },
 }
 
----@type table<string, linter.Linter>
+---@type table<string, lint.Linter|fun():lint.Linter>
 local linters = {}
 local config_files = vim.api.nvim_get_runtime_file('lua/linters/*.lua', true)
 
 for _, path in ipairs(config_files) do
   local name = utils.get_file_name_no_ext(path)
-  ---@type linter.Linter
   local config = dofile(path)
   local baseLinter = lint.linters[name]
 
@@ -27,7 +26,6 @@ for _, path in ipairs(config_files) do
     baseLinter = baseLinter()
   end
 
-  ---@diagnostic disable-next-line
   linters[name] = vim.tbl_deep_extend('force', baseLinter, config)
 end
 

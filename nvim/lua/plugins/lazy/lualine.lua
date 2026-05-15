@@ -9,7 +9,7 @@ return {
     sections = {
       lualine_x = {
         function()
-          return require('direnv').statusline()
+          return require('nvim.lua.plugins.lazy.direnv').statusline()
         end,
         'encoding',
         'fileformat',

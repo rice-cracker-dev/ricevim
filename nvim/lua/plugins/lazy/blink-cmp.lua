@@ -3,6 +3,7 @@
 ---@type LazySpec
 return {
   'saghen/blink.cmp',
+  dependencies = { 'nvim-mini/mini.nvim' },
   event = { 'InsertEnter', 'CmdlineEnter' },
 
   ---@type blink.cmp.Config
