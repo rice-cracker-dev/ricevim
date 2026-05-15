@@ -1,0 +1,13 @@
+[
+  {
+    "prefix": "lazyspec",
+    "desc": "LazySpec table",
+    "body": [
+      "---@module 'lazy'",
+      "---@type LazySpec",
+      "return {",
+      "\t$0",
+      "}"
+    ]
+  }
+]

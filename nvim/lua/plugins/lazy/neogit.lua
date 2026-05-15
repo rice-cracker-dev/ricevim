@@ -1,8 +1,8 @@
+---@module 'lazy'
+---@type LazySpec
 return {
   'NeogitOrg/neogit',
   lazy = true,
-  dependencies = {
-    'sindrets/diffview.nvim',
-  },
   cmd = 'Neogit',
+  dependencies = { 'sindrets/diffview.nvim' },
 }

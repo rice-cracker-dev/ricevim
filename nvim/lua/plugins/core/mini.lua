@@ -26,6 +26,12 @@ require('mini.comment').setup({
     textobject = '<leader>c',
   },
 })
-require('mini.pairs').setup()
 require('mini.surround').setup()
 require('mini.splitjoin').setup()
+
+local loader = require('mini.snippets').gen_loader
+require('mini.snippets').setup({
+  snippets = {
+    loader.from_lang(),
+  },
+})

@@ -11,6 +11,7 @@
 
     # plugins
     blink-cmp.url = "github:saghen/blink.cmp";
+    blink-pairs.url = "github:saghen/blink.pairs";
 
     direnv-nvim = {
       url = "github:NotAShelf/direnv.nvim";

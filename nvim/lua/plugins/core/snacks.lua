@@ -1,15 +1,8 @@
 require('snacks').setup({
   picker = { enabled = true },
   terminal = { enabled = true },
-  gh = { enabled = true },
   bigfile = { enabled = true },
-  scratch = { enabled = true },
   indent = { enabled = true, animate = { enabled = false } },
-  notifier = {
-    enabled = true,
-    padding = false,
-    gap = 1,
-  },
   dashboard = {
     enabled = true,
     pane_gap = 16,

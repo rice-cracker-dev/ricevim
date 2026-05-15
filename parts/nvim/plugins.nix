@@ -26,20 +26,12 @@ in {
       SchemaStore-nvim
       nvim-treesitter.withAllGrammars
       nvim-ts-context-commentstring
-      inputs'.blink-cmp.packages.default
       snacks-nvim
       mini-nvim
-      oil-nvim
       catppuccin-nvim
-      conform-nvim
       nvim-lint
       direnv-nvim-source
-      lualine-nvim
-      nvim-cursorline
       fidget-nvim
-      nvim-ts-autotag
-      diagflow-nvim
-      diffview-nvim
     ];
 
     # lazy plugins
@@ -55,6 +47,14 @@ in {
       typst-preview-nvim
       opencode-nvim-source
       neogit
+      conform-nvim
+      inputs'.blink-cmp.packages.default
+      inputs'.blink-pairs.packages.default
+      diagflow-nvim
+      lualine-nvim
+      nvim-ts-autotag
+      oil-nvim
+      diffview-nvim
     ];
   };
 }

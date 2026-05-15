@@ -4,6 +4,7 @@
 return {
   {
     'sudo-tee/opencode.nvim',
+    event = 'VeryLazy',
 
     dependencies = {
       'MeanderingProgrammer/render-markdown.nvim',

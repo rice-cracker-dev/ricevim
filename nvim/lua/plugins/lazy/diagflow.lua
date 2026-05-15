@@ -1,8 +1,7 @@
 ---@module 'lazy'
 ---@type LazySpec
 return {
-  'chomosuke/typst-preview.nvim',
-  ft = 'typst',
-
+  'dgagn/diagflow.nvim',
+  event = 'LspAttach',
   opts = {},
 }

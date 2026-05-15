@@ -66,6 +66,11 @@ wk.add({
     '<cmd>Neogit<cr>',
     desc = 'Toggle Neogit',
   },
+  {
+    '<leader>l',
+    '<cmd>Lazy<cr>',
+    desc = 'Open Lazy',
+  },
 })
 
 vim.api.nvim_create_augroup('ricevim_lsp_mappings', { clear = true })
