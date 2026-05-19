@@ -23,6 +23,6 @@ require('lazy').setup({
   },
 
   spec = {
-    { import = 'plugins.lazy' },
+    { import = 'plugins' },
   },
 })
