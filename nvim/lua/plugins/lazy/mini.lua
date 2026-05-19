@@ -13,10 +13,6 @@ return {
     })
     MiniIcons.mock_nvim_web_devicons()
 
-    -- general
-    require('mini.git').setup()
-    require('mini.diff').setup()
-
     -- text editing
     require('mini.comment').setup({
       options = {
@@ -38,6 +34,11 @@ return {
     local loader = require('mini.snippets').gen_loader
     require('mini.snippets').setup({
       snippets = { loader.from_lang() },
+      expand = {
+        insert = function(snippet)
+          return MiniSnippets.default_insert(snippet, { empty_tabstop = '', empty_tabstop_final = '' })
+        end,
+      },
     })
   end,
 }
