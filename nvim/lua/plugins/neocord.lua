@@ -1,6 +1,6 @@
----@module 'lazy'
----@type LazySpec
+---@module 'lz.n'
+---@type lz.n.PluginSpec
 return {
-  'IogaMaster/neocord',
-  event = 'VeryLazy',
+  'neocord',
+  event = 'DeferredUIEnter',
 }

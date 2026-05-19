@@ -1,8 +1,9 @@
----@module 'lazy'
----@type LazySpec
+---@module 'lz.n'
+---@type lz.n.PluginSpec
 return {
-  'chomosuke/typst-preview.nvim',
+  'typst-preview.nvim',
   ft = 'typst',
-
-  opts = {},
+  after = function()
+    require('typst-preview').setup()
+  end,
 }

@@ -3,6 +3,9 @@
 local wk = require('which-key')
 local constants = require('constants')
 
+wk.setup({ preset = 'helix' })
+
+wk.add({ ' ', '<Nop>', { silent = true, remap = false } })
 wk.add({
   {
     '<c-t>',
@@ -65,11 +68,6 @@ wk.add({
     '<leader>g',
     '<cmd>Neogit<cr>',
     desc = 'Toggle Neogit',
-  },
-  {
-    '<leader>l',
-    '<cmd>Lazy<cr>',
-    desc = 'Open Lazy',
   },
 })
 

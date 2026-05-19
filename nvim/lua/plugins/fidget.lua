@@ -1,6 +1,8 @@
----@module 'lazy'
----@type LazySpec
+---@module 'lz.n'
+---@type lz.n.PluginSpec
 return {
-  'j-hui/fidget.nvim',
-  opts = {},
+  'fidget.nvim',
+  after = function()
+    require('fidget').setup({})
+  end,
 }

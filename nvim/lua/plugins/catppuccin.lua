@@ -1,11 +1,10 @@
----@module 'lazy'
----@type LazySpec
+---@module 'lz.n'
+---@type lz.n.PluginSpec
 return {
-  'catppuccin/nvim',
-  name = 'catppuccin-nvim',
+  'catppuccin-nvim',
+  lazy = false,
   priority = 1000,
-
-  config = function()
+  after = function()
     require('catppuccin').setup({
       flavour = 'macchiato',
 

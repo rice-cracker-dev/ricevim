@@ -1,5 +1,9 @@
----@module 'lazy'
----@type LazySpec
+---@module 'lz.n'
+---@type lz.n.PluginSpec
 return {
-  'NotAShelf/direnv.nvim',
+  'direnv.nvim',
+  lazy = false,
+  after = function()
+    require('direnv').setup()
+  end,
 }

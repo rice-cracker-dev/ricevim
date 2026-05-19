@@ -1,7 +1,9 @@
----@module 'lazy'
----@type LazySpec
+---@module 'lz.n'
+---@type lz.n.PluginSpec
 return {
-  'dgagn/diagflow.nvim',
+  'diagflow.nvim',
   event = 'LspAttach',
-  opts = {},
+  after = function()
+    require('diagflow').setup()
+  end,
 }

@@ -1,7 +1,9 @@
----@module 'lazy'
----@type LazySpec
+---@module 'lz.n'
+---@type lz.n.PluginSpec
 return {
-  'windwp/nvim-ts-autotag',
+  'nvim-ts-autotag',
   event = { 'BufReadPre', 'BufNewFile' },
-  opts = {},
+  after = function()
+    require('nvim-ts-autotag').setup()
+  end,
 }

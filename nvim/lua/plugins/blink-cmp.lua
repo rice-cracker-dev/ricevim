@@ -1,114 +1,115 @@
----@module 'lazy'
----@module 'blink'
----@type LazySpec
+---@module 'lz.n'
+---@type lz.n.PluginSpec
 return {
-  'saghen/blink.cmp',
-  dependencies = { 'nvim-mini/mini.nvim' },
+  'blink.cmp',
   event = { 'InsertEnter', 'CmdlineEnter' },
+  before = function()
+    require('lz.n').trigger_load('lazydev.nvim')
+  end,
+  after = function()
+    require('blink-cmp').setup({
+      appearance = {
+        nerd_font_variant = 'normal',
+        kind_icons = {
+          Text = '',
+          Method = '',
+          Function = '',
+          Constructor = '',
 
-  ---@type blink.cmp.Config
-  opts = {
-    appearance = {
-      nerd_font_variant = 'normal',
-      kind_icons = {
-        Text = '',
-        Method = '',
-        Function = '',
-        Constructor = '',
+          Field = '',
+          Variable = '',
+          Property = '',
 
-        Field = '',
-        Variable = '',
-        Property = '',
+          Class = '',
+          Interface = '',
+          Struct = '',
+          Module = '󰅩',
 
-        Class = '',
-        Interface = '',
-        Struct = '',
-        Module = '󰅩',
+          Unit = '',
+          Value = '',
+          Enum = '',
+          EnumMember = '',
 
-        Unit = '',
-        Value = '',
-        Enum = '',
-        EnumMember = '',
+          Keyword = '',
+          Constant = '',
 
-        Keyword = '',
-        Constant = '',
-
-        Snippet = '',
-        Color = '',
-        File = '',
-        Reference = '',
-        Folder = '',
-        Event = '',
-        Operator = '',
-        TypeParameter = '',
-      },
-    },
-
-    snippets = { preset = 'mini_snippets' },
-
-    completion = {
-      list = {
-        selection = {
-          preselect = false,
-          auto_insert = false,
+          Snippet = '',
+          Color = '',
+          File = '',
+          Reference = '',
+          Folder = '',
+          Event = '',
+          Operator = '',
+          TypeParameter = '',
         },
       },
 
-      trigger = {
-        show_on_trigger_character = false,
-      },
-
-      documentation = {
-        auto_show = true,
-      },
-
-      ghost_text = {
-        enabled = true,
-        show_with_menu = true,
-      },
-
-      menu = {
-        draw = {
-          columns = { { 'kind_icon' }, { 'kind' }, { 'label', 'label_description', gap = 1 } },
-        },
-      },
-    },
-
-    cmdline = {
-      keymap = { preset = 'inherit' },
+      snippets = { preset = 'mini_snippets' },
 
       completion = {
-        menu = { auto_show = true },
-        list = { selection = { preselect = false, auto_insert = false } },
-      },
-    },
+        list = {
+          selection = {
+            preselect = false,
+            auto_insert = false,
+          },
+        },
 
-    sources = {
-      default = {
-        'lazydev',
-        'lsp',
-        'path',
-        'snippets',
-        'buffer',
-      },
+        trigger = {
+          show_on_trigger_character = false,
+        },
 
-      providers = {
-        lazydev = {
-          name = 'LazyDev',
-          module = 'lazydev.integrations.blink',
-          score_offset = 100,
+        documentation = {
+          auto_show = true,
+        },
+
+        ghost_text = {
+          enabled = true,
+          show_with_menu = true,
+        },
+
+        menu = {
+          draw = {
+            columns = { { 'kind_icon' }, { 'kind' }, { 'label', 'label_description', gap = 1 } },
+          },
         },
       },
-    },
 
-    fuzzy = { implementation = 'rust' },
+      cmdline = {
+        keymap = { preset = 'inherit' },
 
-    keymap = {
-      preset = 'enter',
+        completion = {
+          menu = { auto_show = true },
+          list = { selection = { preselect = false, auto_insert = false } },
+        },
+      },
 
-      ['<c-space>'] = { 'show', 'show_documentation', 'show_signature' },
-      ['<s-tab>'] = { 'select_prev', 'fallback' },
-      ['<tab>'] = { 'select_next', 'fallback' },
-    },
-  },
+      sources = {
+        default = {
+          'lazydev',
+          'lsp',
+          'path',
+          'snippets',
+          'buffer',
+        },
+
+        providers = {
+          lazydev = {
+            name = 'LazyDev',
+            module = 'lazydev.integrations.blink',
+            score_offset = 100,
+          },
+        },
+      },
+
+      fuzzy = { implementation = 'rust' },
+
+      keymap = {
+        preset = 'enter',
+
+        ['<c-space>'] = { 'show', 'show_documentation', 'show_signature' },
+        ['<s-tab>'] = { 'select_prev', 'fallback' },
+        ['<tab>'] = { 'select_next', 'fallback' },
+      },
+    })
+  end,
 }

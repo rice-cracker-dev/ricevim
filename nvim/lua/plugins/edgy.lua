@@ -1,24 +1,12 @@
----@module 'lazy'
----@module 'edgy'
----@type LazySpec
+---@module 'lz.n'
+---@type lz.n.PluginSpec
 return {
-  'folke/edgy.nvim',
-  event = 'VeryLazy',
-
-  opts = function(_, opts)
-    for _, pos in ipairs({ 'top', 'bottom', 'left', 'right' }) do
-      opts[pos] = opts[pos] or {}
-      table.insert(opts[pos], {
-        ft = 'snacks_terminal',
-        size = { height = 0.3 },
-        title = '%{b:snacks_terminal.id}: %{b:term_title}',
-        filter = function(_, win)
-          return vim.w[win].snacks_win and vim.w[win].snacks_win.position == pos and vim.w[win].snacks_win.relative == 'editor' and not vim.w[win].trouble_preview
-        end,
-      })
-    end
-
-    return vim.tbl_deep_extend('force', opts, {
+  'edgy.nvim',
+  event = 'DeferredUIEnter',
+  after = function()
+    ---@module 'edgy'
+    ---@type Edgy.Config
+    local opts = {
       animate = {
         enabled = false,
       },
@@ -38,6 +26,35 @@ return {
           size = { height = 1 },
         },
       },
-    })
+      right = {
+        {
+          ft = 'opencode_output',
+          wo = {
+            winbar = false,
+            winhighlight = 'Normal:OpencodeBackground',
+          },
+        },
+        {
+          ft = 'opencode',
+          size = { height = 8 },
+          wo = {
+            winbar = false,
+            winhighlight = 'Normal:OpencodeBackground',
+          },
+        },
+      },
+    }
+
+    for _, pos in ipairs({ 'top', 'bottom', 'left', 'right' }) do
+      opts[pos] = opts[pos] or {}
+      table.insert(opts[pos], {
+        ft = 'snacks_terminal',
+        size = { height = 0.3 },
+        title = '%{b:snacks_terminal.id}: %{b:term_title}',
+        filter = function(_, win)
+          return vim.w[win].snacks_win and vim.w[win].snacks_win.position == pos and vim.w[win].snacks_win.relative == 'editor' and not vim.w[win].trouble_preview
+        end,
+      })
+    end
   end,
 }

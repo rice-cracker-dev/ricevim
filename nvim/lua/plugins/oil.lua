@@ -1,15 +1,14 @@
----@module 'lazy'
----@type LazySpec
+---@module 'lz.n'
+---@type lz.n.PluginSpec
 return {
-  'stevearc/oil.nvim',
+  'oil.nvim',
   cmd = 'Oil',
-
-  ---@module 'oil'
-  ---@type oil.SetupOpts
-  opts = {
-    default_file_explorer = true,
-    view_options = {
-      show_hidden = true,
-    },
-  },
+  after = function()
+    require('oil').setup({
+      default_file_explorer = true,
+      view_options = {
+        show_hidden = true,
+      },
+    })
+  end,
 }

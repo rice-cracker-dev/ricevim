@@ -1,38 +1,35 @@
----@module 'lazy'
----@type LazySpec
+---@module 'lz.n'
+---@type lz.n.PluginSpec
 return {
-  'saghen/blink.pairs',
-  version = '*',
-
+  'blink.pairs',
   event = { 'InsertEnter', 'CmdlineEnter' },
-
-  ---@module 'blink.pairs'
-  ---@type blink.pairs.Config
-  opts = {
-    mappings = {
-      enabled = true,
-      cmdline = true,
-      disabled_filetypes = {},
-      wrap = {
-        ['<C-b>'] = 'motion',
-        ['<C-S-b>'] = 'motion_reverse',
-      },
-      pairs = {},
-    },
-    highlights = {
-      enabled = true,
-      cmdline = true,
-      groups = { 'BlinkPairsOrange', 'BlinkPairsPurple', 'BlinkPairsBlue' },
-      unmatched_group = 'BlinkPairsUnmatched',
-
-      matchparen = {
+  after = function()
+    require('blink-pairs').setup({
+      mappings = {
         enabled = true,
-        cmdline = false,
-        include_surrounding = false,
-        group = 'BlinkPairsMatchParen',
-        priority = 250,
+        cmdline = true,
+        disabled_filetypes = {},
+        wrap = {
+          ['<C-b>'] = 'motion',
+          ['<C-S-b>'] = 'motion_reverse',
+        },
+        pairs = {},
       },
-    },
-    debug = false,
-  },
+      highlights = {
+        enabled = true,
+        cmdline = true,
+        groups = { 'BlinkPairsOrange', 'BlinkPairsPurple', 'BlinkPairsBlue' },
+        unmatched_group = 'BlinkPairsUnmatched',
+
+        matchparen = {
+          enabled = true,
+          cmdline = false,
+          include_surrounding = false,
+          group = 'BlinkPairsMatchParen',
+          priority = 250,
+        },
+      },
+      debug = false,
+    })
+  end,
 }

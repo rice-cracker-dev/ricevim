@@ -1,12 +1,10 @@
----@module 'lazy'
----@type LazySpec
+---@module 'lz.n'
+---@type lz.n.PluginSpec
 return {
-  'stevearc/conform.nvim',
-
+  'conform.nvim',
   event = 'BufWritePre',
   cmd = { 'ConformInfo' },
-
-  config = function()
+  after = function()
     local utils = require('utils')
     local formatter = require('formatter')
     local config_files = vim.api.nvim_get_runtime_file('lua/formatters/*.lua', true)

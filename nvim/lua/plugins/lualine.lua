@@ -1,20 +1,22 @@
----@module "lazy"
----@type LazySpec
+---@module "lz.n"
+---@type lz.n.PluginSpec
 return {
-  'nvim-lualine/lualine.nvim',
-  event = 'VeryLazy',
-  opts = {
-    options = { section_separators = '', component_separators = '' },
+  'lualine.nvim',
+  event = 'DeferredUIEnter',
+  after = function()
+    require('lualine').setup({
+      options = { section_separators = '', component_separators = '' },
 
-    sections = {
-      lualine_x = {
-        function()
-          return require('nvim.lua.plugins.lazy.direnv').statusline()
-        end,
-        'encoding',
-        'fileformat',
-        'filetype',
+      sections = {
+        lualine_x = {
+          function()
+            return require('direnv').statusline()
+          end,
+          'encoding',
+          'fileformat',
+          'filetype',
+        },
       },
-    },
-  },
+    })
+  end,
 }

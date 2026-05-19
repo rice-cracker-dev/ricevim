@@ -1,13 +1,14 @@
----@module 'lazy'
----@type LazySpec
+---@module 'lz.n'
+---@type lz.n.PluginSpec
 return {
-  'folke/lazydev.nvim',
-
+  'lazydev.nvim',
   ft = 'lua',
-  opts = {
-    library = {
-      { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
-      { path = '/run/current-system/sw/share/hypr/stubs', words = { 'hl%.' } },
-    },
-  },
+  after = function()
+    require('lazydev').setup({
+      library = {
+        { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
+        { path = '/run/current-system/sw/share/hypr/stubs', words = { 'hl%.' } },
+      },
+    })
+  end,
 }

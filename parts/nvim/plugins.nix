@@ -18,7 +18,7 @@
 in {
   plugins = {
     start = with pkgs.vimPlugins; [
-      lazy-nvim
+      lz-n
       plenary-nvim
       friendly-snippets
       nvim-lspconfig
@@ -27,12 +27,13 @@ in {
       nvim-treesitter.withAllGrammars
       nvim-ts-context-commentstring
       nvim-lint
+      which-key-nvim
+      diffview-nvim
     ];
 
     # lazy plugins
     opt = with pkgs.vimPlugins; [
       lazydev-nvim
-      which-key-nvim
       edgy-nvim
       neocord
       trouble-nvim
@@ -49,7 +50,6 @@ in {
       lualine-nvim
       nvim-ts-autotag
       oil-nvim
-      diffview-nvim
       direnv-nvim-source
       fidget-nvim
       snacks-nvim

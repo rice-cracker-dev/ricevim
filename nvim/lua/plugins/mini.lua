@@ -1,9 +1,9 @@
----@module 'lazy'
----@type LazySpec
+---@module 'lz.n'
+---@type lz.n.PluginSpec
 return {
-  'nvim-mini/mini.nvim',
-
-  config = function()
+  'mini.nvim',
+  lazy = false,
+  after = function()
     -- call twice to access MiniIcons.get on the second setup call
     require('mini.icons').setup({
       filetype = {

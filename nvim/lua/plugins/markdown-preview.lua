@@ -1,7 +1,7 @@
----@module 'lazy'
----@type LazySpec
+---@module 'lz.n'
+---@type lz.n.PluginSpec
 return {
-  'iamcco/markdown-preview.nvim',
+  'markdown-preview.nvim',
   cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
   ft = { 'markdown' },
 }

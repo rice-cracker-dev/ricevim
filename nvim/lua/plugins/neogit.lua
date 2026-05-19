@@ -1,8 +1,6 @@
----@module 'lazy'
----@type LazySpec
+---@module 'lz.n'
+---@type lz.n.PluginSpec
 return {
-  'NeogitOrg/neogit',
-  lazy = true,
+  'neogit',
   cmd = 'Neogit',
-  dependencies = { 'sindrets/diffview.nvim' },
 }

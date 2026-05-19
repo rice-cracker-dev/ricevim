@@ -1,16 +1,13 @@
----@module 'lazy'
----@module 'edgy'
----@type LazySpec
+---@module 'lz.n'
+---@type lz.n.PluginSpec
 return {
-  {
-    'sudo-tee/opencode.nvim',
-    event = 'VeryLazy',
-
-    dependencies = {
-      'MeanderingProgrammer/render-markdown.nvim',
-    },
-
-    opts = {
+  'opencode.nvim',
+  event = 'DeferredUIEnter',
+  before = function()
+    require('lz.n').trigger_load('render-markdown.nvim')
+  end,
+  after = function()
+    require('opencode').setup({
       preferred_picker = 'snacks',
       preferred_completion = 'blink',
 
@@ -20,31 +17,6 @@ return {
           max_height = 0.25,
         },
       },
-    },
-  },
-
-  {
-    'folke/edgy.nvim',
-
-    ---@type Edgy.Config
-    opts = {
-      right = {
-        {
-          ft = 'opencode_output',
-          wo = {
-            winbar = false,
-            winhighlight = 'Normal:OpencodeBackground',
-          },
-        },
-        {
-          ft = 'opencode',
-          size = { height = 8 },
-          wo = {
-            winbar = false,
-            winhighlight = 'Normal:OpencodeBackground',
-          },
-        },
-      },
-    },
-  },
+    })
+  end,
 }
