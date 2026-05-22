@@ -1,0 +1,10 @@
+{
+  "shadcn": {
+    "prefix": "shadcn",
+    "description": "Import a shadcn-svelte component",
+    "body": [
+      "import $2 from \"\\$lib/components/ui/$1\"",
+      "$0"
+    ]
+  }
+}
