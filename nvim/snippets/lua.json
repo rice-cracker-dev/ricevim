@@ -6,6 +6,19 @@
       "---@module 'lazy'",
       "---@type LazySpec",
       "return {",
+      "\t\"{$1:name}\",",
+      "\t$0",
+      "}"
+    ]
+  },
+  {
+    "prefix": "lznspec",
+    "desc": "lz.n.PluginSpec table",
+    "body": [
+      "---@module 'lz.n'",
+      "---@type lz.n.PluginSpec",
+      "return {",
+      "\t\"${1:name}\",",
       "\t$0",
       "}"
     ]

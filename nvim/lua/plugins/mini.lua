@@ -30,15 +30,5 @@ return {
     })
     require('mini.surround').setup()
     require('mini.splitjoin').setup()
-
-    local loader = require('mini.snippets').gen_loader
-    require('mini.snippets').setup({
-      snippets = { loader.from_lang() },
-      expand = {
-        insert = function(snippet)
-          return MiniSnippets.default_insert(snippet, { empty_tabstop = '', empty_tabstop_final = '' })
-        end,
-      },
-    })
   end,
 }

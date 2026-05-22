@@ -44,8 +44,6 @@ return {
         },
       },
 
-      snippets = { preset = 'mini_snippets' },
-
       completion = {
         list = {
           selection = {
@@ -97,6 +95,13 @@ return {
             name = 'LazyDev',
             module = 'lazydev.integrations.blink',
             score_offset = 100,
+          },
+
+          snippets = {
+            opts = {
+              friendly_snippets = false, -- friendly snippet is included in the search paths below
+              search_paths = vim.api.nvim_get_runtime_file('snippets', true),
+            },
           },
         },
       },
