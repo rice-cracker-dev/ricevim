@@ -3,8 +3,7 @@
     "prefix": "shadcn",
     "description": "Import a shadcn-svelte component",
     "body": [
-      "import $2 from \"\\$lib/components/ui/$1\"",
-      "$0"
+      "import $2 from \"\\$lib/components/ui/$1\";$0"
     ]
   },
   {
@@ -13,9 +12,7 @@
     "body": [
       "<script lang=\"ts\">",
       "\tlet { children } = \\$props();",
-      "</script>",
-      "",
-      "$0"
+      "</script>$0"
     ]
   }
 ]
