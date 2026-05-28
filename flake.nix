@@ -11,7 +11,9 @@
 
     # plugins
     blink-cmp.url = "github:saghen/blink.cmp";
+    blink-cmp.inputs.nixpkgs.follows = "nixpkgs";
     blink-pairs.url = "github:saghen/blink.pairs";
+    blink-pairs.inputs.nixpkgs.follows = "nixpkgs";
 
     direnv-nvim = {
       url = "github:NotAShelf/direnv.nvim";
