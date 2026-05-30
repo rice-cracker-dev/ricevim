@@ -1,0 +1,9 @@
+[
+  {
+    "prefix": "export-s-component",
+    "description": "Export a svelte component",
+    "body": [
+      "export { default as $2 } from \"$1\";$0"
+    ]
+  }
+]
