@@ -6,9 +6,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs?ref=nixos-unstable-small";
     mnw.url = "github:Gerg-L/mnw";
 
-    # lsps
-    qml-language-server.url = "github:cushycush/qml-language-server";
-
     # plugins
     blink-cmp.url = "github:saghen/blink.cmp";
     blink-cmp.inputs.nixpkgs.follows = "nixpkgs";
