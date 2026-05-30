@@ -5,6 +5,11 @@ local language_filetypes = {
   tsx = { 'typescriptreact' },
 }
 
+-- blacklist certain filetype from using treesitter indent
+local indent_blacklist = {
+  qml = true,
+}
+
 for filetype, exts in pairs(language_filetypes) do
   vim.treesitter.language.register(filetype, exts)
 end
@@ -22,6 +27,9 @@ vim.api.nvim_create_autocmd('FileType', {
 
     -- indent
     -- still buggy as hell
-    vim.bo.indentexpr = 'v:lua.require\'nvim-treesitter\'.indentexpr()'
+    if not indent_blacklist[vim.bo.ft] then
+      vim.print('ok applied')
+      vim.bo.indentexpr = 'v:lua.require\'nvim-treesitter\'.indentexpr()'
+    end
   end,
 })
