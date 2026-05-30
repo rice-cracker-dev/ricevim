@@ -28,7 +28,6 @@ vim.api.nvim_create_autocmd('FileType', {
     -- indent
     -- still buggy as hell
     if not indent_blacklist[vim.bo.ft] then
-      vim.print('ok applied')
       vim.bo.indentexpr = 'v:lua.require\'nvim-treesitter\'.indentexpr()'
     end
   end,
