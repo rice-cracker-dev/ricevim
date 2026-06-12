@@ -26,6 +26,7 @@ in {
       SchemaStore-nvim
       nvim-treesitter.withAllGrammars
       nvim-ts-context-commentstring
+      nvim-treesitter-context
       nvim-lint
       which-key-nvim
       diffview-nvim

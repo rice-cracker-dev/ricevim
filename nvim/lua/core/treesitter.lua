@@ -1,5 +1,3 @@
-local treesitter_augroup = vim.api.nvim_create_augroup('ricevim_treesitter', { clear = true })
-
 -- blacklist certain filetype from using treesitter indent
 local indent_blacklist = {
   qml = true,
@@ -7,7 +5,7 @@ local indent_blacklist = {
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = '*',
-  group = treesitter_augroup,
+  group = vim.api.nvim_create_augroup('ricevim_treesitter', { clear = true }),
   callback = function(args)
     local buf = args.buf
     local filetype = args.match
@@ -30,4 +28,9 @@ vim.api.nvim_create_autocmd('FileType', {
       vim.bo.indentexpr = 'v:lua.require\'nvim-treesitter\'.indentexpr()'
     end
   end,
+})
+
+require('treesitter-context').setup({
+  enable = true,
+  multiwindow = true,
 })
