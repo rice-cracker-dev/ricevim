@@ -1,29 +1,28 @@
 local treesitter_augroup = vim.api.nvim_create_augroup('ricevim_treesitter', { clear = true })
 
-local language_filetypes = {
-  javascript = { 'javascriptreact' },
-  tsx = { 'typescriptreact' },
-}
-
 -- blacklist certain filetype from using treesitter indent
 local indent_blacklist = {
   qml = true,
 }
 
-for filetype, exts in pairs(language_filetypes) do
-  vim.treesitter.language.register(filetype, exts)
-end
-
 vim.api.nvim_create_autocmd('FileType', {
   pattern = '*',
   group = treesitter_augroup,
   callback = function(args)
+    local buf = args.buf
+    local filetype = args.match
+    local language = vim.treesitter.language.get_lang(filetype) or filetype
+
+    if not vim.treesitter.language.add(language) then
+      return
+    end
+
     -- highlight
-    pcall(vim.treesitter.start, args.buf)
+    vim.treesitter.start(buf, language)
 
     -- fold
-    vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-    vim.wo[0][0].foldmethod = 'expr'
+    vim.wo.foldmethod = 'expr'
+    vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 
     -- indent
     -- still buggy as hell

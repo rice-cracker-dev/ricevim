@@ -5,6 +5,32 @@ local constants = require('constants')
 
 wk.setup({ preset = 'helix' })
 
+wk.add({
+  '<A-o>',
+  function()
+    if vim.treesitter.get_parser(nil, nil, { error = false }) then
+      require('vim.treesitter._select').select_parent(vim.v.count1)
+    else
+      vim.lsp.buf.selection_range(vim.v.count1)
+    end
+  end,
+  mode = { 'n', 'x', 'o' },
+  desc = 'Select outer node',
+})
+
+wk.add({
+  '<A-i>',
+  function()
+    if vim.treesitter.get_parser(nil, nil, { error = false }) then
+      require('vim.treesitter._select').select_child(vim.v.count1)
+    else
+      vim.lsp.buf.selection_range(-vim.v.count1)
+    end
+  end,
+  mode = { 'n', 'x', 'o' },
+  desc = 'Select inner node',
+})
+
 wk.add({ ' ', '<Nop>', { silent = true, remap = false } })
 wk.add({
   {
