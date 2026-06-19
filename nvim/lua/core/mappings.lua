@@ -4,7 +4,9 @@ local wk = require('which-key')
 local constants = require('constants')
 
 wk.setup({ preset = 'helix' })
+wk.add({ ' ', '<Nop>', { silent = true, remap = false } })
 
+-- incremental selection
 wk.add({
   '<A-o>',
   function()
@@ -16,9 +18,7 @@ wk.add({
   end,
   mode = { 'n', 'x', 'o' },
   desc = 'Select outer node',
-})
-
-wk.add({
+}, {
   '<A-i>',
   function()
     if vim.treesitter.get_parser(nil, nil, { error = false }) then
@@ -31,7 +31,6 @@ wk.add({
   desc = 'Select inner node',
 })
 
-wk.add({ ' ', '<Nop>', { silent = true, remap = false } })
 wk.add({
   {
     '<c-t>',
@@ -42,11 +41,30 @@ wk.add({
   },
   { '<c-n>', '<cmd>Oil<cr>', desc = 'Toggle Oil' },
   {
+    '<leader>B',
+    function()
+      Snacks.scratch.open({
+        win = {
+          width = 0.9,
+          height = 0.9,
+        },
+      })
+    end,
+    desc = 'Toggle scratch buffer',
+  },
+  {
     '<leader>f',
     function()
       Snacks.picker.files(constants.snacks_picker_files_config)
     end,
     desc = 'Pick files',
+  },
+  {
+    '<leader>d',
+    function()
+      require('utils').snacks_directory_picker()
+    end,
+    desc = 'Pick directories',
   },
   {
     '<leader>/',

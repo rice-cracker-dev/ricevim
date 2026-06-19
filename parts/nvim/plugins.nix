@@ -30,6 +30,7 @@ in {
       nvim-lint
       which-key-nvim
       diffview-nvim
+      oil-nvim
     ];
 
     # lazy plugins
@@ -50,7 +51,6 @@ in {
       diagflow-nvim
       lualine-nvim
       nvim-ts-autotag
-      oil-nvim
       direnv-nvim-source
       fidget-nvim
       snacks-nvim
