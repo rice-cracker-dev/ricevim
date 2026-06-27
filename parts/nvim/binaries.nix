@@ -17,6 +17,7 @@
     tinymist
     rust-analyzer
     nushell
+    zls
 
     # formatters
     stylua
@@ -24,6 +25,7 @@
     prettierd
     rustfmt
     nufmt
+    zig # zig fmt
 
     # linters
     selene
