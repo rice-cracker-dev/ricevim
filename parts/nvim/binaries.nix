@@ -45,5 +45,6 @@
     fd
     opencode
     lsof
+    ffmpeg # for image conversion
   ];
 }
