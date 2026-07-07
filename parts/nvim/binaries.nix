@@ -4,7 +4,6 @@
     lua-language-server
     nixd
     astro-language-server
-    typescript-language-server
     vscode-langservers-extracted
     svelte-language-server
     docker-language-server
@@ -18,6 +17,7 @@
     rust-analyzer
     nushell
     zls
+    typescript-go
 
     # formatters
     stylua
