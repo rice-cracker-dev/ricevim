@@ -84,22 +84,6 @@
         "type": "github"
       }
     },
-    "direnv-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1782680771,
-        "narHash": "sha256-b5PpmkYWaDGLNcu+36tRR5ycATHYBjs9WrV8/jfmooQ=",
-        "owner": "NotAShelf",
-        "repo": "direnv.nvim",
-        "rev": "9258f9f10c4c729d8296fce0e3ecb12543daad06",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NotAShelf",
-        "repo": "direnv.nvim",
-        "type": "github"
-      }
-    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib"
@@ -164,31 +148,13 @@
         "type": "github"
       }
     },
-    "opencode-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1783425413,
-        "narHash": "sha256-qWBoCWJ1DQkg7tl7iT9kSJTOG8PLBYJwuBmWPBh0464=",
-        "owner": "sudo-tee",
-        "repo": "opencode.nvim",
-        "rev": "c367e97e9cbd0b9bfe488e525e6810a27ac9cff6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "sudo-tee",
-        "repo": "opencode.nvim",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "blink-cmp": "blink-cmp",
         "blink-pairs": "blink-pairs",
-        "direnv-nvim": "direnv-nvim",
         "flake-parts": "flake-parts",
         "mnw": "mnw",
-        "nixpkgs": "nixpkgs",
-        "opencode-nvim": "opencode-nvim"
+        "nixpkgs": "nixpkgs"
       }
     }
   },

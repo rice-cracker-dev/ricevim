@@ -1,17 +1,17 @@
 {
   pkgs,
-  inputs,
   inputs',
+  pins,
   ...
 }: let
   direnv-nvim-source = pkgs.vimUtils.buildVimPlugin {
     name = "direnv.nvim";
-    src = inputs.direnv-nvim;
+    src = pins.direnv-nvim;
   };
 
   opencode-nvim-source = pkgs.vimUtils.buildVimPlugin {
     name = "opencode.nvim";
-    src = inputs.opencode-nvim;
+    src = pins.opencode-nvim;
     dependencies = with pkgs; [vimPlugins.plenary-nvim];
     buildInputs = with pkgs; [opencode];
   };

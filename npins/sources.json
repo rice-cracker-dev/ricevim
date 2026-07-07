@@ -1,23 +1,36 @@
 {
   "pins": {
-    "hyprland": {
+    "direnv-nvim": {
       "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "hyprwm",
-        "repo": "hyprland"
+        "owner": "NotAShelf",
+        "repo": "direnv.nvim"
       },
       "branch": "main",
       "submodules": false,
-      "revision": "b034fa53819fc35b982c22bc5ea7b32fd7def776",
-      "url": "https://github.com/hyprwm/hyprland/archive/b034fa53819fc35b982c22bc5ea7b32fd7def776.tar.gz",
-      "hash": "sha256-mVNshX6kDO+SqR5oFqFEi/zuLbqJc4JpOzWR2hwvK9A="
+      "revision": "9258f9f10c4c729d8296fce0e3ecb12543daad06",
+      "url": "https://github.com/NotAShelf/direnv.nvim/archive/9258f9f10c4c729d8296fce0e3ecb12543daad06.tar.gz",
+      "hash": "sha256-b5PpmkYWaDGLNcu+36tRR5ycATHYBjs9WrV8/jfmooQ="
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
       "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre996527.48d91f2c0ce7/nixexprs.tar.xz",
       "hash": "sha256-RmPrrfjRTwLZo9DhtwYjPH+TClmPZO5rufdl+rp7kio="
+    },
+    "opencode-nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "sudo-tee",
+        "repo": "opencode.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "c367e97e9cbd0b9bfe488e525e6810a27ac9cff6",
+      "url": "https://github.com/sudo-tee/opencode.nvim/archive/c367e97e9cbd0b9bfe488e525e6810a27ac9cff6.tar.gz",
+      "hash": "sha256-qWBoCWJ1DQkg7tl7iT9kSJTOG8PLBYJwuBmWPBh0464="
     }
   },
   "version": 7

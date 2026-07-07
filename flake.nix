@@ -11,16 +11,6 @@
     blink-cmp.inputs.nixpkgs.follows = "nixpkgs";
     blink-pairs.url = "github:saghen/blink.pairs";
     blink-pairs.inputs.nixpkgs.follows = "nixpkgs";
-
-    direnv-nvim = {
-      url = "github:NotAShelf/direnv.nvim";
-      flake = false;
-    };
-
-    opencode-nvim = {
-      url = "github:sudo-tee/opencode.nvim";
-      flake = false;
-    };
   };
 
   outputs = inputs @ {flake-parts, ...}:
