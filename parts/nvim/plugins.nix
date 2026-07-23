@@ -1,17 +1,17 @@
 {
   pkgs,
-  inputs',
-  pins,
+  inputs,
+  system,
   ...
 }: let
   direnv-nvim-source = pkgs.vimUtils.buildVimPlugin {
     name = "direnv.nvim";
-    src = pins.direnv-nvim;
+    src = inputs.direnv-nvim;
   };
 
   opencode-nvim-source = pkgs.vimUtils.buildVimPlugin {
     name = "opencode.nvim";
-    src = pins.opencode-nvim;
+    src = inputs.opencode-nvim;
     dependencies = with pkgs; [vimPlugins.plenary-nvim];
     buildInputs = with pkgs; [opencode];
   };
@@ -46,8 +46,8 @@ in {
       opencode-nvim-source
       neogit
       conform-nvim
-      inputs'.blink-cmp.packages.default
-      inputs'.blink-pairs.packages.default
+      inputs.blink-cmp.packages.${system}.default
+      inputs.blink-pairs.packages.${system}.default
       diagflow-nvim
       lualine-nvim
       nvim-ts-autotag

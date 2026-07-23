@@ -1,0 +1,30 @@
+[shorturls]
+[all_follow]
+[inputs]
+
+[inputs.nixpkgs]
+url = "github:NixOS/nixpkgs/nixos-unstable"
+
+[inputs.mnw]
+url = "github:Gerg-L/mnw"
+
+[inputs.flake-parts]
+url = "github:hercules-ci/flake-parts"
+follows = { nixpkgs-lib = "nixpkgs" }
+
+[inputs.blink-cmp]
+url = "github:saghen/blink.cmp"
+follows = { nixpkgs = "nixpkgs" }
+
+[inputs.blink-pairs]
+url = "github:saghen/blink.pairs"
+follows = { nixpkgs = "nixpkgs" }
+
+[inputs.direnv-nvim]
+url = "github:NotAShelf/direnv.nvim"
+type = "fetch"
+
+[inputs.opencode-nvim]
+url = "github:sudo-tee/opencode.nvim"
+type = "fetch"
+
