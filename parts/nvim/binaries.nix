@@ -18,6 +18,7 @@
     nushell
     zls
     typescript-go
+    tombi # lsp, formatter, linter
 
     # formatters
     stylua

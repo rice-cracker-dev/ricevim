@@ -1,7 +1,8 @@
 [shorturls]
-[all_follow]
-[inputs]
 
+[all_follow]
+
+[inputs]
 [inputs.nixpkgs]
 url = "github:NixOS/nixpkgs/nixos-unstable"
 
@@ -27,4 +28,3 @@ type = "fetch"
 [inputs.opencode-nvim]
 url = "github:sudo-tee/opencode.nvim"
 type = "fetch"
-
