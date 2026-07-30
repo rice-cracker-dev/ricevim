@@ -56,6 +56,7 @@ in {
       snacks-nvim
       mini-nvim
       catppuccin-nvim
+      blame-nvim
     ];
   };
 }

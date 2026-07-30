@@ -39,6 +39,11 @@ wk.add({
     end,
     desc = 'Toggle terminal',
   },
+  {
+    '<c-b>',
+    '<cmd>BlameToggle<cr>',
+    desc = 'Toggle git blame',
+  },
   { '<c-n>', '<cmd>Oil<cr>', desc = 'Toggle Oil' },
   {
     '<leader>B',

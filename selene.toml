@@ -1,1 +1,4 @@
 std = "neovim"
+
+[config]
+mixed_table = "allow"
