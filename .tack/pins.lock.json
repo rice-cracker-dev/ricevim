@@ -3,9 +3,9 @@
     "type": "github",
     "owner": "saghen",
     "repo": "blink.cmp",
-    "rev": "0f54bd78892f587db4dcf100a23eaddfc2a9df7d",
-    "narHash": "sha256-QE41xQY9G8ghgByfv6ANxEIgbCnuOh4YJFqFF9npOqU=",
-    "lastModified": 1784110137
+    "rev": "005f8c859997f40f65bfbec5f4b400c45fecc06a",
+    "narHash": "sha256-egVCbEvYHuVQxZ9HXVYyo6Ch3Ikusi4lym4q815jlEc=",
+    "lastModified": 1785487205
   },
   "blink-pairs": {
     "type": "github",
@@ -43,16 +43,16 @@
     "type": "github",
     "owner": "NixOS",
     "repo": "nixpkgs",
-    "rev": "241313f4e8e508cb9b13278c2b0fa25b9ca27163",
-    "narHash": "sha256-vlHUuqAcbcH2RKmHbPiuQzbv1pnzzavXnI62RD0bqCU=",
-    "lastModified": 1784497964
+    "rev": "1559d3daa3ecc813a650b79375ea61b6741b8746",
+    "narHash": "sha256-LQy14TZp77TwbQf40gg1V3jo8FwJG0jGDkAH+zRHqg8=",
+    "lastModified": 1785454630
   },
   "opencode-nvim": {
     "type": "github",
     "owner": "sudo-tee",
     "repo": "opencode.nvim",
-    "rev": "33a6629fde5c936f1bc0809ec6e25355dcf665d0",
-    "narHash": "sha256-2jOB9Fcb2rRf3iDTrbPK3zP/uvWiS4WdHlXKPDugRWg=",
-    "lastModified": 1784552711
+    "rev": "cdf00c5f4ac8161d3ec66bfcb8af140b30b42c6a",
+    "narHash": "sha256-2RWyh9ep+VGqjIAax+TvnF57JhzDqHgzNRBXLxkoi6M=",
+    "lastModified": 1785157454
   }
 }
