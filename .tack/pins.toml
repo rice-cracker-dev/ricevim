@@ -1,6 +1,11 @@
+[tack]
+recomposable = true
+
 [shorturls]
 
 [all_follow]
+nixpkgs = "nixpkgs"
+flake-parts = "flake-parts"
 
 [inputs]
 [inputs.nixpkgs]
@@ -11,15 +16,12 @@ url = "github:Gerg-L/mnw"
 
 [inputs.flake-parts]
 url = "github:hercules-ci/flake-parts"
-follows = { nixpkgs-lib = "nixpkgs" }
 
 [inputs.blink-cmp]
 url = "github:saghen/blink.cmp"
-follows = { nixpkgs = "nixpkgs" }
 
 [inputs.blink-pairs]
 url = "github:saghen/blink.pairs"
-follows = { nixpkgs = "nixpkgs" }
 
 [inputs.direnv-nvim]
 url = "github:NotAShelf/direnv.nvim"
