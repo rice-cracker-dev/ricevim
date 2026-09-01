@@ -33,4 +33,7 @@ vim.api.nvim_create_autocmd('FileType', {
 require('treesitter-context').setup({
   enable = true,
   multiwindow = true,
+  max_lines = 5,
+  line_numbers = true,
+  trim_scope = 'outer',
 })
