@@ -17,7 +17,7 @@
     rust-analyzer
     nushell
     zls
-    typescript-go
+    typescript
     tombi # lsp, formatter, linter
 
     # formatters
