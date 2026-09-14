@@ -1,6 +1,7 @@
 -- blacklist certain filetype from using treesitter indent
 local indent_blacklist = {
   qml = true,
+  cs = true,
 }
 
 vim.api.nvim_create_autocmd('FileType', {

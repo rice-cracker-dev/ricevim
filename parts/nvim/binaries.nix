@@ -19,6 +19,7 @@
     zls
     typescript
     tombi # lsp, formatter, linter
+    roslyn-ls
 
     # formatters
     stylua
@@ -27,6 +28,7 @@
     rustfmt
     nufmt
     zig # zig fmt
+    csharpier
 
     # linters
     selene

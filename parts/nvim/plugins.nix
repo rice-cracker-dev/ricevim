@@ -15,6 +15,12 @@
     dependencies = with pkgs; [vimPlugins.plenary-nvim];
     buildInputs = with pkgs; [opencode];
   };
+
+  neonuget-source = pkgs.vimUtils.buildVimPlugin {
+    name = "neonuget";
+    src = inputs.neonuget;
+    dependencies = with pkgs; [vimPlugins.plenary-nvim];
+  };
 in {
   plugins = {
     start = with pkgs.vimPlugins; [
@@ -57,6 +63,7 @@ in {
       mini-nvim
       catppuccin-nvim
       blame-nvim
+      neonuget-source
     ];
   };
 }

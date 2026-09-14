@@ -39,6 +39,14 @@
     "narHash": "sha256-HRn4O1X2ShYtbq5Egji72/aemyc2cIQicjRZD9hBqM8=",
     "lastModified": 1784154424
   },
+  "neonuget": {
+    "type": "github",
+    "owner": "MonsieurTib",
+    "repo": "neonuget",
+    "rev": "bc174044b009a19a6fa39fbcb5b90ddf1f874267",
+    "narHash": "sha256-9e2AGHBQn8VWfRX4BpnqvGwhw/faLYbAhzdzUbdQYwU=",
+    "lastModified": 1769591826
+  },
   "nixpkgs": {
     "type": "github",
     "owner": "NixOS",
