@@ -20,6 +20,7 @@
     typescript
     tombi # lsp, formatter, linter
     roslyn-ls
+    deno
 
     # formatters
     stylua
