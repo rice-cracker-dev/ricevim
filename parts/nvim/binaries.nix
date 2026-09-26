@@ -18,6 +18,7 @@
     nushell
     zls
     typescript
+    typescript-language-server
     tombi # lsp, formatter, linter
     roslyn-ls
     deno

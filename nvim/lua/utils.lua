@@ -40,4 +40,17 @@ function M.snacks_directory_picker()
   })
 end
 
+---@param bin string
+---@return boolean
+function M.tsc_supports_lsp(bin)
+  if vim.fn.executable(bin) ~= 1 then
+    return false
+  end
+
+  local out = vim.system({ bin, '--version' }, { text = true }):wait()
+  local version = vim.version.parse(out.stdout or '')
+
+  return out.code == 0 and version ~= nil and version.major >= 7
+end
+
 return M
