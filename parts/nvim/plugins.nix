@@ -64,6 +64,7 @@ in {
       catppuccin-nvim
       blame-nvim
       neonuget-source
+      competitest-nvim
     ];
   };
 }

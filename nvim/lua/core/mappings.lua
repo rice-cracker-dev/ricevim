@@ -46,7 +46,7 @@ wk.add({
   },
   { '<c-n>', '<cmd>Oil<cr>', desc = 'Toggle Oil' },
   {
-    '<leader>B',
+    '<leader>b',
     function()
       Snacks.scratch.open({
         win = {
@@ -59,55 +59,59 @@ wk.add({
   },
   {
     '<leader>f',
+    group = 'Pickers',
+  },
+  {
+    '<leader>ff',
     function()
       Snacks.picker.files(constants.snacks_picker_files_config)
     end,
     desc = 'Pick files',
   },
   {
-    '<leader>d',
+    '<leader>fd',
     function()
       require('utils').snacks_directory_picker()
     end,
     desc = 'Pick directories',
   },
   {
-    '<leader>/',
+    '<leader>fg',
     function()
       Snacks.picker.grep(constants.snacks_picker_grep_config)
     end,
     desc = 'Live grep',
   },
   {
-    '<leader>b',
+    '<leader>fb',
     function()
       Snacks.picker.buffers()
     end,
     desc = 'Pick buffers',
   },
   {
-    '<leader>s',
+    '<leader>fs',
     function()
       Snacks.picker.lsp_symbols()
     end,
     desc = 'Pick symbols',
   },
   {
-    '<leader>S',
+    '<leader>fS',
     function()
       Snacks.picker.lsp_symbols()
     end,
     desc = 'Pick workspace symbols',
   },
   {
-    '<leader>i',
+    '<leader>fi',
     function()
       Snacks.picker.icons()
     end,
     desc = 'Pick icons',
   },
   {
-    '<leader>h',
+    '<leader>fh',
     function()
       Snacks.picker.highlights()
     end,
@@ -117,6 +121,34 @@ wk.add({
     '<leader>g',
     '<cmd>Neogit<cr>',
     desc = 'Toggle Neogit',
+  },
+  {
+    '<leader>D',
+    group = 'Direnv',
+  },
+  {
+    '<leader>o',
+    group = 'Opencode',
+  },
+  {
+    '<leader>p',
+    group = 'CompetiTest',
+  },
+  {
+    '<leader>pr',
+    '<cmd>CompetiTest run<cr>',
+  },
+  {
+    '<leader>pe',
+    '<cmd>CompetiTest edit_testcase<cr>',
+  },
+  {
+    '<leader>pa',
+    '<cmd>CompetiTest add_testcase<cr>',
+  },
+  {
+    '<leader>pd',
+    '<cmd>CompetiTest delete_testcase<cr>',
   },
 })
 
