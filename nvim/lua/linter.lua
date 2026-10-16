@@ -11,6 +11,7 @@ M.linters_by_ft = {
   lua = { 'selene' },
   nix = { 'statix' },
   python = { 'ruff' },
+  rust = { 'clippy' },
 }
 
 ---@type table<string, lint.Linter|fun():lint.Linter>

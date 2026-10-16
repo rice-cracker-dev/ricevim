@@ -1,5 +1,5 @@
-{pkgs, ...}: {
-  extraBinPath = with pkgs; [
+{pkgs, ...}: let
+  binaries = with pkgs; [
     # lsps
     lua-language-server
     nixd
@@ -31,13 +31,14 @@
     nufmt
     zig # zig fmt
     csharpier
+    oxfmt
 
     # linters
     selene
-    eslint_d
     statix
     ruff # also acts as formatter
     clippy
+    oxlint
 
     # runtimes
     nodejs
@@ -52,4 +53,7 @@
     lsof
     ffmpeg # for image conversion
   ];
+in {
+  # the plan is to not include binaries to PATH later.
+  extraBinPath = binaries;
 }
