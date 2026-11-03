@@ -1,2 +1,4 @@
 ---@type vim.lsp.Config
-return {}
+return {
+  cmd = {},
+}

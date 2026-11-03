@@ -23,6 +23,7 @@ M.formatters_by_ft = {
   nix = { 'alejandra' },
   python = { 'ruff' },
   nu = { 'nufmt' },
+  csharp = { 'csharpier' },
 }
 
 return M

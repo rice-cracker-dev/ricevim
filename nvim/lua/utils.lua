@@ -53,4 +53,27 @@ function M.tsc_supports_lsp(bin)
   return out.code == 0 and version ~= nil and version.major >= 7
 end
 
+---@param bin string
+---@param key string? # key of vim.g.binaries_table, defaults to bin
+---@return string
+---@description this function get bin from PATH or from vim.g.binaries_table
+function M.get_builtin_bin(bin, key)
+  key = key or bin
+  local from_path = vim.fn.exepath(bin)
+
+  if from_path ~= '' then
+    return from_path
+  end
+
+  if vim.g.binaries_table[key] then
+    local path = string.format('%s/bin/%s', vim.g.binaries_table[key], bin)
+
+    if vim.fn.executable(path) == 1 then
+      return path
+    end
+  end
+
+  error(string.format('%s does not contain %s!', key, bin))
+end
+
 return M

@@ -80,7 +80,7 @@ local bin_cache = {} ---@type table<string, string>
 return {
   init_options = { hostInfo = 'neovim' },
   cmd = function(dispatchers, config)
-    local cmd = 'typescript-language-server'
+    local cmd = require('utils').get_builtin_bin('typescript-language-server')
     if (config or {}).root_dir then
       local local_cmd = vim.fs.joinpath(config.root_dir, 'node_modules/.bin', cmd)
       if vim.fn.executable(local_cmd) == 1 then
