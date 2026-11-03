@@ -4,7 +4,7 @@ vim.o.clipboard = 'unnamedplus'
 vim.o.undofile = true
 vim.o.swapfile = false
 
-vim.o.winborder = 'solid'
+vim.o.winborder = 'single'
 vim.o.laststatus = 3
 vim.o.splitkeep = 'screen'
 vim.o.splitbelow = true
@@ -17,7 +17,9 @@ vim.o.shiftwidth = 2
 vim.o.tabstop = 2
 vim.o.expandtab = true
 vim.o.foldenable = false
-vim.opt.fillchars = { eob = ' ' }
+vim.opt.fillchars = {
+  eob = ' ',
+}
 
 vim.o.number = true
 vim.o.relativenumber = true

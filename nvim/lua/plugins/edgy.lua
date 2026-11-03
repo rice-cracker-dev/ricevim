@@ -30,7 +30,6 @@ return {
         {
           ft = 'opencode_output',
           wo = {
-            winbar = false,
             winhighlight = 'Normal:OpencodeBackground',
           },
         },
@@ -38,7 +37,6 @@ return {
           ft = 'opencode',
           size = { height = 8 },
           wo = {
-            winbar = false,
             winhighlight = 'Normal:OpencodeBackground',
           },
         },
