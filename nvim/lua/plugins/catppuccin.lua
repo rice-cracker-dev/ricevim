@@ -7,14 +7,11 @@ return {
   after = function()
     require('catppuccin').setup({
       flavour = 'macchiato',
+      transparent_background = true,
 
       float = {
-        transparent = false,
-        solid = true,
-      },
-
-      dim_inactive = {
-        enabled = true,
+        transparent = true,
+        solid = false,
       },
 
       auto_integrations = true,
