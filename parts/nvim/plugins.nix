@@ -50,7 +50,6 @@ in {
       persistence-nvim
       typst-preview-nvim
       opencode-nvim-source
-      neogit
       conform-nvim
       inputs.blink-cmp.packages.${system}.default
       inputs.blink-pairs.packages.${system}.default

@@ -52,6 +52,7 @@
     opencode
     lsof
     ffmpeg # for image conversion
+    lazygit
   ];
 in {
   # the plan is to not include binaries to PATH later.

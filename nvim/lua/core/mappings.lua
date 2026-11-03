@@ -119,8 +119,10 @@ wk.add({
   },
   {
     '<leader>g',
-    '<cmd>Neogit<cr>',
-    desc = 'Toggle Neogit',
+    function()
+      Snacks.lazygit.open()
+    end,
+    desc = 'Toggle Lazygit',
   },
   {
     '<leader>D',
