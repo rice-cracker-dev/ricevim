@@ -10,7 +10,6 @@ local utils = require('utils')
 M.linters_by_ft = {
   lua = { 'selene' },
   nix = { 'statix' },
-  rust = { 'clippy' },
 }
 
 ---@type table<string, lint.Linter|fun():lint.Linter>
