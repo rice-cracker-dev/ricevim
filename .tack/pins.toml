@@ -34,3 +34,7 @@ type = "fetch"
 [inputs.neonuget]
 url = "github:MonsieurTib/neonuget"
 type = "fetch"
+
+[inputs.clip-paste-nvim]
+url = "github:pugarte7/clip-paste.nvim"
+type = "fetch"

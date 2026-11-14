@@ -21,6 +21,11 @@
     src = inputs.neonuget;
     dependencies = with pkgs; [vimPlugins.plenary-nvim];
   };
+
+  clip-paste-nvim-source = pkgs.vimUtils.buildVimPlugin {
+    name = "clip-paste.nvim";
+    src = inputs.clip-paste-nvim;
+  };
 in {
   plugins = {
     start = with pkgs.vimPlugins; [
@@ -64,6 +69,7 @@ in {
       blame-nvim
       neonuget-source
       competitest-nvim
+      clip-paste-nvim-source
     ];
   };
 }

@@ -15,6 +15,14 @@
     "narHash": "sha256-VHMZkfD8u78Ng56dPuIl+8m/i3kWXcwhetPcO4+48Xc=",
     "lastModified": 1789249383
   },
+  "clip-paste-nvim": {
+    "type": "github",
+    "owner": "pugarte7",
+    "repo": "clip-paste.nvim",
+    "rev": "3808b79107f5de15f52a40c6e5fd8521a8ecf3ee",
+    "narHash": "sha256-LCgnVuhputamym2F1S6UVcJPURk5RnwxApBbdRwrRiY=",
+    "lastModified": 1773354838
+  },
   "direnv-nvim": {
     "type": "github",
     "owner": "NotAShelf",
