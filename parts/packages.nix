@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  inputs,
+  self,
+  ...
+}: {
   perSystem = {
     pkgs,
     inputs',
@@ -16,13 +20,9 @@
 
       default = neovim;
     };
+  };
 
-    hydraJobs = {
-      inherit neovim;
-    };
-    # // (packagesFromDirectoryRecursive {
-    #   inherit callPackage;
-    #   directory = ./pkgs;
-    # });
+  flake.hydraJobs = {
+    inherit (self.packages) neovim;
   };
 }
