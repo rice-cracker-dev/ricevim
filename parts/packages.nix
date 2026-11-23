@@ -4,7 +4,6 @@
     inputs',
     self',
     system,
-    # lib,
     ...
   }: let
     # inherit (lib) packagesFromDirectoryRecursive callPackageWith;
@@ -19,7 +18,7 @@
     };
 
     hydraJobs = {
-      inherit (self'.packages) default;
+      inherit neovim;
     };
     # // (packagesFromDirectoryRecursive {
     #   inherit callPackage;
