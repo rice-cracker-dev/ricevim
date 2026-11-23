@@ -2,7 +2,14 @@
   inputs,
   self,
   ...
-}: {
+}: let
+  mkHydraPackage = packageName: systems:
+    builtins.listToAttrs (map (system: {
+        name = system;
+        value = self.packages.${system}.${packageName};
+      })
+      systems);
+in {
   perSystem = {
     pkgs,
     inputs',
@@ -10,8 +17,6 @@
     system,
     ...
   }: let
-    # inherit (lib) packagesFromDirectoryRecursive callPackageWith;
-    # callPackage = callPackageWith (pkgs // {inherit inputs;});
     neovim = inputs.mnw.lib.wrap {inherit inputs inputs' self' pkgs system;} ./nvim;
   in {
     packages = {
@@ -23,6 +28,6 @@
   };
 
   flake.hydraJobs = {
-    inherit (self.packages) neovim;
+    neovim = mkHydraPackage "neovim" ["x86_64-linux" "aarch64-linux"];
   };
 }
