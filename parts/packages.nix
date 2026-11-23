@@ -17,6 +17,10 @@
 
       default = neovim;
     };
+
+    hydraJobs = {
+      inherit (self'.packages) default;
+    };
     # // (packagesFromDirectoryRecursive {
     #   inherit callPackage;
     #   directory = ./pkgs;
