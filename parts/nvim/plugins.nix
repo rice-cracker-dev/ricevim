@@ -9,13 +9,6 @@
     src = inputs.direnv-nvim;
   };
 
-  opencode-nvim-source = pkgs.vimUtils.buildVimPlugin {
-    name = "opencode.nvim";
-    src = inputs.opencode-nvim;
-    dependencies = with pkgs; [vimPlugins.plenary-nvim];
-    buildInputs = with pkgs; [opencode];
-  };
-
   neonuget-source = pkgs.vimUtils.buildVimPlugin {
     name = "neonuget";
     src = inputs.neonuget;
@@ -54,7 +47,6 @@ in {
       render-markdown-nvim
       persistence-nvim
       typst-preview-nvim
-      opencode-nvim-source
       conform-nvim
       inputs.blink-cmp.packages.${system}.default
       inputs.blink-pairs.packages.${system}.default

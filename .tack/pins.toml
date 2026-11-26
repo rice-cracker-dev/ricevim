@@ -27,10 +27,6 @@ url = "github:saghen/blink.pairs"
 url = "github:NotAShelf/direnv.nvim"
 type = "fetch"
 
-[inputs.opencode-nvim]
-url = "github:sudo-tee/opencode.nvim"
-type = "fetch"
-
 [inputs.neonuget]
 url = "github:MonsieurTib/neonuget"
 type = "fetch"

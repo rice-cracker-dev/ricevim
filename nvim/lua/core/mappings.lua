@@ -129,10 +129,6 @@ wk.add({
     group = 'Direnv',
   },
   {
-    '<leader>o',
-    group = 'Opencode',
-  },
-  {
     '<leader>p',
     group = 'CompetiTest',
   },

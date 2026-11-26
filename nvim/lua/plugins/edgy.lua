@@ -26,21 +26,6 @@ return {
           size = { height = 1 },
         },
       },
-      right = {
-        {
-          ft = 'opencode_output',
-          wo = {
-            winhighlight = 'Normal:OpencodeBackground',
-          },
-        },
-        {
-          ft = 'opencode',
-          size = { height = 8 },
-          wo = {
-            winhighlight = 'Normal:OpencodeBackground',
-          },
-        },
-      },
     }
 
     for _, pos in ipairs({ 'top', 'bottom', 'left', 'right' }) do
