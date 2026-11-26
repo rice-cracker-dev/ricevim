@@ -23,14 +23,12 @@ url = "github:saghen/blink.cmp"
 [inputs.blink-pairs]
 url = "github:saghen/blink.pairs"
 
-[inputs.direnv-nvim]
-url = "github:NotAShelf/direnv.nvim"
-type = "fetch"
-
 [inputs.neonuget]
 url = "github:MonsieurTib/neonuget"
 type = "fetch"
+group = "plugin"
 
 [inputs.clip-paste-nvim]
 url = "github:pugarte7/clip-paste.nvim"
 type = "fetch"
+group = "plugin"
