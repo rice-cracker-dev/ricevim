@@ -17,12 +17,6 @@ url = "github:Gerg-L/mnw"
 [inputs.flake-parts]
 url = "github:hercules-ci/flake-parts"
 
-[inputs.blink-cmp]
-url = "github:saghen/blink.cmp"
-
-[inputs.blink-pairs]
-url = "github:saghen/blink.pairs"
-
 [inputs.neonuget]
 url = "github:MonsieurTib/neonuget"
 type = "fetch"

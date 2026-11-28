@@ -1,20 +1,4 @@
 {
-  "blink-cmp": {
-    "type": "github",
-    "owner": "saghen",
-    "repo": "blink.cmp",
-    "rev": "3d3631f641e6e9b60066f269f435d23c524ceeb0",
-    "narHash": "sha256-t0S5HAz6WMPmtRS5qWYcUKwQ41cPLyMSx1kSuFyFmt4=",
-    "lastModified": 1794790418
-  },
-  "blink-pairs": {
-    "type": "github",
-    "owner": "saghen",
-    "repo": "blink.pairs",
-    "rev": "ef8fc29c8afa0fc1d0eb611a1a76fd87f0951f6e",
-    "narHash": "sha256-VHMZkfD8u78Ng56dPuIl+8m/i3kWXcwhetPcO4+48Xc=",
-    "lastModified": 1789249383
-  },
   "clip-paste-nvim": {
     "type": "github",
     "owner": "pugarte7",

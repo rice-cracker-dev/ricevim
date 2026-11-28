@@ -1,7 +1,5 @@
 {
   pkgs,
-  inputs,
-  system,
   self',
   ...
 }: {
@@ -34,8 +32,8 @@
         persistence-nvim
         typst-preview-nvim
         conform-nvim
-        inputs.blink-cmp.packages.${system}.default
-        inputs.blink-pairs.packages.${system}.default
+        blink-cmp
+        blink-pairs
         diagflow-nvim
         lualine-nvim
         nvim-ts-autotag
